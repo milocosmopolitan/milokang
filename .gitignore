@@ -2,6 +2,7 @@ node_modules
 public/bundle.js
 public/bundle.js.map
 public/app.css
-public/psd
-public/noupload
+public/images/psd
+public/images/noupload
+public/images/thumbnails
 public/fonts
