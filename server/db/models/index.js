@@ -4,8 +4,8 @@
 // so any other part of the application could call sequelize.model('Song')
 // to get access to the Song model.
 
-const Post = require('./Posts');
-const User = require('./Users');
+const Post = require('./posts');
+const User = require('./users');
 
 // Form the associations
 
