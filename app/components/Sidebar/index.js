@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import { Link } from 'react-router';
 var classNames = require('classnames');
 
 export default class Sidebar extends React.Component {
@@ -14,24 +15,53 @@ export default class Sidebar extends React.Component {
 		}
 	}
 
-	onClickMenuButton(e) {		
+	toggleMenu(){
+		
 		if(this.state.menuStatus){
+			const contentWrapper = document.getElementById('content-wrapper');		
+			contentWrapper.className = "";
 			this.setState({
 				menuStatus: false,
 				menuButtonStatus: false
 			})
 		} else {
+			const contentWrapper = document.getElementById('content-wrapper');		
+			contentWrapper.className = "open";
 			this.setState({
 				menuStatus: true,
 				menuButtonStatus: true
 			})
-		}
+		}	
+	}
+
+	onClickMenuButton(e) {				
+		this.toggleMenu();
+	}
+
+	onClickMenuItem(e) {
+		this.toggleMenu();
+		const { name } = e.target;
+		const contentSections = document.getElementsByClassName('section-wrapper'),
+					miloWrapper = document.getElementById('milo-wrapper'),
+					targetElem = document.getElementById(name);		
+		Array.prototype.forEach.call(contentSections, section=>{			
+			let className = section.className.split(' '),
+					index = className.findIndex(str=>(str==='active'))
+			if( index >= 0 ) { // if index exist
+				className.splice(index, 1);
+			}
+			section.className = className.join(' ');
+		});		
+
+		if(name==='about') miloWrapper.className = "active"
+		else miloWrapper.className = ""
+		targetElem.className += " active";
 		
 	}
 
 	render(){
 		return (
-			<div id="sidebar">
+			<div id="sidebar" style={this.props.parallex(35, {fixed: true})}>
 		  	<div id="btn-menu" 
 		  		className={classNames({open: this.state.menuButtonStatus})} 
 		  		onClick={this.onClickMenuButton.bind(this)}>
@@ -40,26 +70,23 @@ export default class Sidebar extends React.Component {
 					<span className="bottom"></span>
 				</div>
 
-		  	<div className={classNames('menu', {open: this.state.menuStatus})}>
-		  		<div className="contact-info">
-		  			<div>Contact</div>
-		  			<div>
-		  				<div>Milo Kang</div>
-		  				<div>Fullstack Developer</div>
-		  				<div>New York, USA</div>
-		  			</div>
-		  		</div>
+		  	<div className={classNames('menu', {open: this.state.menuStatus})}>		  		
 		  		<div>
-			  		<ul>	
-			  			<li>About</li>
-			  			<li>Projects</li>
-			  			<li>Blog</li>
-			  			<li>Contact</li>  			
+			  		<ul>
+			  			<li>
+			  				<Link name="about" onClick={this.onClickMenuItem.bind(this)}>About</Link>
+		  				</li>
+		  				<li>
+			  				<Link name="projects" onClick={this.onClickMenuItem.bind(this)}>Projects</Link>
+		  				</li>
+		  				<li>
+			  				<Link name="blog" onClick={this.onClickMenuItem.bind(this)}>Blog</Link>
+		  				</li>
+		  				<li>
+			  				<Link name="contact" onClick={this.onClickMenuItem.bind(this)}>Contact</Link>
+		  				</li>
 			  		</ul>
-		  		</div>
-		  		<div>
-		  			Copyright 2017 © Milo Kang
-		  		</div>
+		  		</div>		  		
 		  	</div>
 
 		  </div>		
