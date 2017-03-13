@@ -4,15 +4,7 @@
   "description": "",
   "main": "server/index.js",
   "preferGlobal": true,
-  "author": "Milo Kang <milowebmaster@gmail.com>",
-  "contributors": [
-    {
-      "name": "Dan Kang"
-    },
-    {
-      "name": "Jimmy Wang"
-    }
-  ],
+  "author": "Milo Kang <milowebmaster@gmail.com>",  
   "bin": {
     "exact": "node_modules/exact-cli/index.js"
   },
@@ -20,10 +12,8 @@
     "build": "webpack",
     "build-watch": "webpack -w",
     "start": "nodemon --watch server -e js,html server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cli-init": "PATH=$(npm bin):$PATH exact && alias npm-exec=\"PATH=$(npm bin):$PATH\" && alias exact=\"npm-exec exact\"",
-    "db-init": "./db-init.sh",
-    "postinstall": "npm run db-init && npm run cli-init"
+    "test": "echo \"Error: no test specified\" && exit 1",    
+    "postinstall": "webpack"
   },
   "license": "ISC",
   "dependencies": {
@@ -38,7 +28,6 @@
     "body-parser": "^1.15.2",
     "classnames": "^2.2.5",
     "css-loader": "^0.26.1",
-    "exact-cli": "0.0.3",
     "express": "^4.14.0",
     "lodash": "^4.17.2",
     "node-sass": "^4.5.0",
@@ -50,8 +39,7 @@
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.1",
     "react-redux": "^4.4.6",
-    "react-router": "^3.0.0",
-    "react-scroll": "^1.4.4",
+    "react-router": "^3.0.0",    
     "redux": "^3.6.0",
     "redux-logger": "^2.7.4",
     "redux-thunk": "^2.1.0",
@@ -60,8 +48,5 @@
     "style-loader": "^0.13.1",
     "volleyball": "^1.4.1",
     "webpack": "^1.13.3"
-  },
-  "devDependencies": {
-    "exact-cli": "0.0.3"
   }
 }

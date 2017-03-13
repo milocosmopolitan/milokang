@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 import { 
-  Projects, Contact, Content, Main, Beer, About, 
+  Content, Main, Beer, About, 
   ParallaxContainer, ParallaxSection, ParallaxNav, ParallaxImage, ParallaxContent,
   DistortionContainer } from '../../components';
 let about = () => (<About />);
@@ -21,7 +21,16 @@ let dummyData = [
       "./images/projects/landing_01.png", "./images/projects/landing_02.png", "./images/projects/landing_03.png"
     ],
     content: about,
-
+    links: [
+      {
+        title: "LinkedIn", 
+        url: "https://www.linkedin.com/in/milokang"
+      },
+      {
+        title: "Github", 
+        url: "https://github.com/milocosmopolitan/"
+      }
+    ],
   },{
     id: 'hopfinder',    
     colorScheme: {
