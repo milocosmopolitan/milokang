@@ -1,6 +1,6 @@
 import React from 'react';
 
-const classNames = require('classNames');
+const classNames = require('classnames');
 const propTypes = {
  
 

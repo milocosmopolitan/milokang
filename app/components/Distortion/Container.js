@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DistortionContent from './Content';
 
-const classNames = require('classNames');
+const classNames = require('classnames');
 const propTypes = {
   // images: React.PropTypes.array,
   current: React.PropTypes.number,  //current section index

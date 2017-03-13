@@ -1,6 +1,5 @@
 import React from 'react';
-
-import classNames from 'classNames';
+import classNames from 'classnames';
 
 const propTypes = {  
   current: React.PropTypes.number,  //current section index

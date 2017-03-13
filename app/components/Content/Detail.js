@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router';
 
-const classNames = require('classNames');
+const classNames = require('classnames');
 
 // let dummyData = {
 //   title: 'Hopfinder',

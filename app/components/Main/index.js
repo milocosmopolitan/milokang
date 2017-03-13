@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-const classNames = require('classNames');
+const classNames = require('classnames');
 
 class Main extends React.Component {
   componentDidMount() {

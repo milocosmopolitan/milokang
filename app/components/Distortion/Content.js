@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const classNames = require('classNames');
+const classNames = require('classnames');
 const propTypes = {
   src: React.PropTypes.string,
   mouseX: React.PropTypes.number,
