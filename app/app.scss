@@ -1,5 +1,40 @@
+body {
+	height: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;	
+	color: rgb(255, 255, 255);
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Patua One', cursive;
+}
+
+@import '/assets/scss/media';
 @import './routes/Root/stylesheet.scss';
 @import './routes/Home/stylesheet.scss';
-@import './components/Navbar/stylesheet.scss';
-@import './components/Sidebar/stylesheet.scss';
-@import './components/Footer/stylesheet.scss';
+@import './components/Parallax/stylesheet.scss';
+@import './components/Distortion/stylesheet.scss';
+@import './components/Content/stylesheet.scss';
+@import './components/Beer/stylesheet.scss';
+
+.link-btn {
+	color: white;
+  margin: 20px 20px 20px 0px;
+  // border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  // outline: 1px solid;
+  outline-color: rgba(255, 255, 255, .5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+} 
+
+.link-btn:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388; 
+}

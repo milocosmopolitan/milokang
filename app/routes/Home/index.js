@@ -1,57 +1,131 @@
-/*
- * Stateless Functional Component
- * =====================================
- * https://medium.com/@housecor/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc#.7qmv5qk1o
- */
-
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import { Projects, Contact } from '../../components';
+import { 
+  Projects, Contact, Content, Main, Beer, About, 
+  ParallaxContainer, ParallaxSection, ParallaxNav, ParallaxImage, ParallaxContent,
+  DistortionContainer } from '../../components';
+let about = () => (<About />);
+let dummyData = [
+  {
+    id: 'about',    
+    colorScheme: {
+      background: {r:18, g:26, b:24, a:1},
+      font: '#EEEEEE',
+      highlight: '#00ffae',
+    },
+    title: 'Hi there..',
+    subheading: "My name is Milo & I'm a web developer with designer's state of mind.",
+    description: "I'm focused on creating simple, beautiful and easy to use digital solutions for all types of businesses with a passion for the web, and mobile development. When I’m not making websites, I tend to be working out, brew coffee , learning a new programming language.",    
+    images: [
+      "./images/projects/landing_01.png", "./images/projects/landing_02.png", "./images/projects/landing_03.png"
+    ],
+    content: about,
 
-// console.log(Projects, Contact)
-export default () => (
-  <div>  	
-    <Grid id="about" className="fullHeight light-theme" fluid={true}>
-      <Row>
-        <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2}>
-            <div>
-              <h1>This is about section</h1>
-              <p>
-                hello, I'm a developer and this is my portfolio.
-              </p>
-            </div>
-        </Col>
-      </Row>
-    </Grid>
+  },{
+    id: 'hopfinder',    
+    colorScheme: {
+      background: {r:18, g:26, b:24, a:0.8},
+      font: '#EEEEEE',
+      highlight: "#ffc000",
+    },
+    title: 'Hopfinder',
+    subheading: "Craft brewery locator",
+    description: "App to help craft beer enthusiasts find breweries in their neighborhoods or when they travel. In addition, users can favorite breweries and keep up to date on events such as can/bottle releases.",    
+    images: [
+      "./images/projects/hopfinder_01.png", "./images/projects/hopfinder_02.png", "./images/projects/hopfinder_03.png"
+    ],
+    content: () => (null),
+    links: [
+      {
+        title: "live demo", 
+        url: "https://quiet-peak-58519.herokuapp.com/"
+      },
+      {
+        title: "github", 
+        url: "https://github.com/hopfinder/hopfinder"
+      }
+    ],
+    technology: ['react.js', 'redux', 'node.js', 'express.js', 'sequelize', 'postgres', 'google api', 'passport.js', 'jwt', 'sass', 'webpack']
+  },{
+    id: 'bisque',    
+    colorScheme: {
+      background: {r:18, g:26, b:24, a:0.8},
+      font: '#EEEEEE',
+      highlight: '#00ffd8',
+    },
+    title: 'Bisque',
+    subheading: "Pomodoro timer for your chrome",
+    description: "Inspired by the Pomodoro Technique, this extension for chrome broweser, let's user divide their work hours with small breaks as well as which tracks user's browsing behavior and distraction level.",    
+    images: [
+      "./images/projects/bisque_01.png", "./images/projects/bisque_02.png", "./images/projects/bisque_03.png"
+    ],
+    content: () => (null),
+    links: [
+      {
+        title: "live demo", 
+        url: "https://chrome.google.com/webstore/detail/bisque/fchdhonfcjnaaifldgcmdjipllmgmdhm"
+      },
+      {
+        title: "github", 
+        url: "https://github.com/team-bisque/bisque"
+      }
+    ],
+    technology: ['react.js', 'redux', 'firebase', 'chrome extension', 'google api', 'd3', 'sass']
+  }
+];
 
-    <Grid id="whatever" className="fullHeight dark-theme" fluid={true}>
-      <Row>
-        <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2}>
-            <div>
-              <h1>This is whatever section</h1>
-              <p>
-                Just to have alternative colored block section
-              </p>
-            </div>
-        </Col>
-      </Row>
-    </Grid>
+export default class Home extends React.Component {
+  render(){
+    let data = dummyData;
+    return(
+      <ParallaxContainer>
+        <ParallaxNav />
+        <Content.Container dimensionStyle={'cube'}>
+          {
+            dummyData.map((data,index)=>{
+              return (
+                <Content.Detail key={index} 
+                  bound={data.id}
+                  title={data.title} 
+                  subheading={data.subheading} 
+                  description={data.description}
+                  backgroundColor={data.colorScheme.background}
+                  content={data.content}
+                  links={data.links}
+                  technology={data.technology}
+                  fontColor="#000000" 
+                  highlightColor={data.colorScheme.highlight}>
 
-    <Grid id="projects" className="fullHeight light-theme" fluid={true}>
-      <Row>
-        <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2}>
-            {/*<Projects />*/}
-        </Col>
-      </Row>
-    </Grid>    
-        
-    <Grid id="contact" className="fullHeight dark-theme" fluid={true}>
-      <Row>
-        <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2}>
-            {/*<Contact />*/}
-        </Col>
-      </Row>
-    </Grid> 
-  </div>
-);
+                </Content.Detail>
+              )
+            })
+          }
+        </Content.Container>
+        <ParallaxSection id="about">
+          <DistortionContainer>
+            <img alt="background" src="./images/projects/landing_01.png" />
+            <img alt="milo" src="./images/projects/landing_02.png" />
+            <img alt="name" src="./images/projects/landing_03.png" />
+          </DistortionContainer>
+        </ParallaxSection>        
+        <ParallaxSection id="hopfinder">
+          <DistortionContainer>
+            <img alt="background" src="./images/projects/hopfinder_01.png" />
+            <img alt="hopfinder" src="./images/projects/hopfinder_02.png" />
+            <img alt="hopfinder" src="./images/projects/hopfinder_03.png" />
+            <Beer />
+          </DistortionContainer>      
+        </ParallaxSection>
+        <ParallaxSection id="bisque">
+          <DistortionContainer>
+            <img alt="background" src="./images/projects/bisque_01.png" />
+            <img alt="bisque" src="./images/projects/bisque_02.png" />
+            <img alt="bisque" src="./images/projects/bisque_03.png" />
+            <img alt="bisque" src="./images/projects/bisque_04.png" />
+          </DistortionContainer>      
+        </ParallaxSection>
+      </ParallaxContainer>
+    )
+  }
+}

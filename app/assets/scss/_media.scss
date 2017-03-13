@@ -1,0 +1,43 @@
+$break-small: 375px;
+$break-large: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+
+
+.hidden-sm {
+  @include respond-to(handhelds) { 
+		display: none;	  
+	}
+  @include respond-to(medium-screens) { 
+    display: block;    
+  } 
+  @include respond-to(wide-screens) { 
+    display: block;    
+  } 
+}
+
+.hidden-md {
+	@include respond-to(medium-screens) { 
+		display: none;	  
+	}	
+  @include respond-to(wide-screens) { 
+    display: block;    
+  } 
+}
+
+.hidden-lg {
+	@include respond-to(wide-screens) { 
+		display: none;	  
+	}	
+}

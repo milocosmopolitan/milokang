@@ -66,7 +66,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(574);
+	__webpack_require__(572);
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRedux.Provider,
 	  { store: _store2.default },
@@ -24395,7 +24395,7 @@
 	
 	var _Home2 = _interopRequireDefault(_Home);
 	
-	var _Root = __webpack_require__(557);
+	var _Root = __webpack_require__(571);
 	
 	var _Root2 = _interopRequireDefault(_Root);
 	
@@ -29351,6 +29351,8 @@
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -29361,87 +29363,151 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// console.log(Projects, Contact)
-	exports.default = function () {
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    _react2.default.createElement(
-	      _reactBootstrap.Grid,
-	      { id: 'about', className: 'fullHeight light-theme', fluid: true },
-	      _react2.default.createElement(
-	        _reactBootstrap.Row,
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var about = function about() {
+	  return _react2.default.createElement(_components.About, null);
+	};
+	var dummyData = [{
+	  id: 'about',
+	  colorScheme: {
+	    background: { r: 18, g: 26, b: 24, a: 1 },
+	    font: '#EEEEEE',
+	    highlight: '#00ffae'
+	  },
+	  title: 'Hi there..',
+	  subheading: "My name is Milo & I'm a web developer with designer's state of mind.",
+	  description: "I'm focused on creating simple, beautiful and easy to use digital solutions for all types of businesses with a passion for the web, and mobile development. When I’m not making websites, I tend to be working out, brew coffee , learning a new programming language.",
+	  images: ["./images/projects/landing_01.png", "./images/projects/landing_02.png", "./images/projects/landing_03.png"],
+	  content: about
+	
+	}, {
+	  id: 'hopfinder',
+	  colorScheme: {
+	    background: { r: 18, g: 26, b: 24, a: 0.8 },
+	    font: '#EEEEEE',
+	    highlight: "#ffc000"
+	  },
+	  title: 'Hopfinder',
+	  subheading: "Craft brewery locator",
+	  description: "App to help craft beer enthusiasts find breweries in their neighborhoods or when they travel. In addition, users can favorite breweries and keep up to date on events such as can/bottle releases.",
+	  images: ["./images/projects/hopfinder_01.png", "./images/projects/hopfinder_02.png", "./images/projects/hopfinder_03.png"],
+	  content: function content() {
+	    return null;
+	  },
+	  links: [{
+	    title: "live demo",
+	    url: "https://quiet-peak-58519.herokuapp.com/"
+	  }, {
+	    title: "github",
+	    url: "https://github.com/hopfinder/hopfinder"
+	  }],
+	  technology: ['react.js', 'redux', 'node.js', 'express.js', 'sequelize', 'postgres', 'google api', 'passport.js', 'jwt', 'sass', 'webpack']
+	}, {
+	  id: 'bisque',
+	  colorScheme: {
+	    background: { r: 18, g: 26, b: 24, a: 0.8 },
+	    font: '#EEEEEE',
+	    highlight: '#00ffd8'
+	  },
+	  title: 'Bisque',
+	  subheading: "Pomodoro timer for your chrome",
+	  description: "Inspired by the Pomodoro Technique, this extension for chrome broweser, let's user divide their work hours with small breaks as well as which tracks user's browsing behavior and distraction level.",
+	  images: ["./images/projects/bisque_01.png", "./images/projects/bisque_02.png", "./images/projects/bisque_03.png"],
+	  content: function content() {
+	    return null;
+	  },
+	  links: [{
+	    title: "live demo",
+	    url: "https://chrome.google.com/webstore/detail/bisque/fchdhonfcjnaaifldgcmdjipllmgmdhm"
+	  }, {
+	    title: "github",
+	    url: "https://github.com/team-bisque/bisque"
+	  }],
+	  technology: ['react.js', 'redux', 'firebase', 'chrome extension', 'google api', 'd3', 'sass']
+	}];
+	
+	var Home = function (_React$Component) {
+	  _inherits(Home, _React$Component);
+	
+	  function Home() {
+	    _classCallCheck(this, Home);
+	
+	    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+	  }
+	
+	  _createClass(Home, [{
+	    key: 'render',
+	    value: function render() {
+	      var data = dummyData;
+	      return _react2.default.createElement(
+	        _components.ParallaxContainer,
 	        null,
+	        _react2.default.createElement(_components.ParallaxNav, null),
 	        _react2.default.createElement(
-	          _reactBootstrap.Col,
-	          { xs: 12, md: 10, mdOffset: 1, lg: 8, lgOffset: 2 },
+	          _components.Content.Container,
+	          { dimensionStyle: 'cube' },
+	          dummyData.map(function (data, index) {
+	            return _react2.default.createElement(_components.Content.Detail, { key: index,
+	              bound: data.id,
+	              title: data.title,
+	              subheading: data.subheading,
+	              description: data.description,
+	              backgroundColor: data.colorScheme.background,
+	              content: data.content,
+	              links: data.links,
+	              technology: data.technology,
+	              fontColor: '#000000',
+	              highlightColor: data.colorScheme.highlight });
+	          })
+	        ),
+	        _react2.default.createElement(
+	          _components.ParallaxSection,
+	          { id: 'about' },
 	          _react2.default.createElement(
-	            'div',
+	            _components.DistortionContainer,
 	            null,
-	            _react2.default.createElement(
-	              'h1',
-	              null,
-	              'This is about section'
-	            ),
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              'hello, I\'m a developer and this is my portfolio.'
-	            )
+	            _react2.default.createElement('img', { alt: 'background', src: './images/projects/landing_01.png' }),
+	            _react2.default.createElement('img', { alt: 'milo', src: './images/projects/landing_02.png' }),
+	            _react2.default.createElement('img', { alt: 'name', src: './images/projects/landing_03.png' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _components.ParallaxSection,
+	          { id: 'hopfinder' },
+	          _react2.default.createElement(
+	            _components.DistortionContainer,
+	            null,
+	            _react2.default.createElement('img', { alt: 'background', src: './images/projects/hopfinder_01.png' }),
+	            _react2.default.createElement('img', { alt: 'hopfinder', src: './images/projects/hopfinder_02.png' }),
+	            _react2.default.createElement('img', { alt: 'hopfinder', src: './images/projects/hopfinder_03.png' }),
+	            _react2.default.createElement(_components.Beer, null)
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _components.ParallaxSection,
+	          { id: 'bisque' },
+	          _react2.default.createElement(
+	            _components.DistortionContainer,
+	            null,
+	            _react2.default.createElement('img', { alt: 'background', src: './images/projects/bisque_01.png' }),
+	            _react2.default.createElement('img', { alt: 'bisque', src: './images/projects/bisque_02.png' }),
+	            _react2.default.createElement('img', { alt: 'bisque', src: './images/projects/bisque_03.png' }),
+	            _react2.default.createElement('img', { alt: 'bisque', src: './images/projects/bisque_04.png' })
 	          )
 	        )
-	      )
-	    ),
-	    _react2.default.createElement(
-	      _reactBootstrap.Grid,
-	      { id: 'whatever', className: 'fullHeight dark-theme', fluid: true },
-	      _react2.default.createElement(
-	        _reactBootstrap.Row,
-	        null,
-	        _react2.default.createElement(
-	          _reactBootstrap.Col,
-	          { xs: 12, md: 10, mdOffset: 1, lg: 8, lgOffset: 2 },
-	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(
-	              'h1',
-	              null,
-	              'This is whatever section'
-	            ),
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              'Just to have alternative colored block section'
-	            )
-	          )
-	        )
-	      )
-	    ),
-	    _react2.default.createElement(
-	      _reactBootstrap.Grid,
-	      { id: 'projects', className: 'fullHeight light-theme', fluid: true },
-	      _react2.default.createElement(
-	        _reactBootstrap.Row,
-	        null,
-	        _react2.default.createElement(_reactBootstrap.Col, { xs: 12, md: 10, mdOffset: 1, lg: 8, lgOffset: 2 })
-	      )
-	    ),
-	    _react2.default.createElement(
-	      _reactBootstrap.Grid,
-	      { id: 'contact', className: 'fullHeight dark-theme', fluid: true },
-	      _react2.default.createElement(
-	        _reactBootstrap.Row,
-	        null,
-	        _react2.default.createElement(_reactBootstrap.Col, { xs: 12, md: 10, mdOffset: 1, lg: 8, lgOffset: 2 })
-	      )
-	    )
-	  );
-	}; /*
-	    * Stateless Functional Component
-	    * =====================================
-	    * https://medium.com/@housecor/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc#.7qmv5qk1o
-	    */
+	      );
+	    }
+	  }]);
+	
+	  return Home;
+	}(_react2.default.Component);
+	
+	exports.default = Home;
 
 /***/ },
 /* 274 */
@@ -48747,7 +48813,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Navbar = exports.Sidebar = exports.Footer = exports.Contact = exports.Projects = undefined;
+	exports.Cube = exports.About = exports.Beer = exports.DistortionContainer = exports.ParallaxSection = exports.ParallaxNav = exports.ParallaxContainer = exports.Main = exports.Navbar = exports.Sidebar = exports.Footer = exports.Content = exports.Contact = exports.Projects = undefined;
 	
 	var _Projects = __webpack_require__(540);
 	
@@ -48769,13 +48835,62 @@
 	
 	var _Sidebar2 = _interopRequireDefault(_Sidebar);
 	
+	var _Main = __webpack_require__(561);
+	
+	var _Main2 = _interopRequireDefault(_Main);
+	
+	var _Content = __webpack_require__(557);
+	
+	var _Content2 = _interopRequireDefault(_Content);
+	
+	var _Cube = __webpack_require__(576);
+	
+	var _Cube2 = _interopRequireDefault(_Cube);
+	
+	var _Container = __webpack_require__(562);
+	
+	var _Container2 = _interopRequireDefault(_Container);
+	
+	var _Section = __webpack_require__(564);
+	
+	var _Section2 = _interopRequireDefault(_Section);
+	
+	var _Nav = __webpack_require__(581);
+	
+	var _Nav2 = _interopRequireDefault(_Nav);
+	
+	var _Container3 = __webpack_require__(568);
+	
+	var _Container4 = _interopRequireDefault(_Container3);
+	
+	var _About = __webpack_require__(580);
+	
+	var _About2 = _interopRequireDefault(_About);
+	
+	var _Beer = __webpack_require__(570);
+	
+	var _Beer2 = _interopRequireDefault(_Beer);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Projects = exports.Projects = _Projects2.default;
+	// import ParallaxImageComponent from './Parallax/Image';
+	// import ParallaxContentComponent from './Parallax/Content';
 	var Contact = exports.Contact = _Contact2.default;
+	var Content = exports.Content = _Content2.default;
 	var Footer = exports.Footer = _Footer2.default;
 	var Sidebar = exports.Sidebar = _Sidebar2.default;
 	var Navbar = exports.Navbar = _Navbar2.default;
+	var Main = exports.Main = _Main2.default;
+	var ParallaxContainer = exports.ParallaxContainer = _Container2.default;
+	var ParallaxNav = exports.ParallaxNav = _Nav2.default;
+	var ParallaxSection = exports.ParallaxSection = _Section2.default;
+	// export const ParallaxImage = ParallaxImageComponent;
+	// export const ParallaxContent = ParallaxContentComponent;
+	var DistortionContainer = exports.DistortionContainer = _Container4.default;
+	var Beer = exports.Beer = _Beer2.default;
+	var About = exports.About = _About2.default;
+	var Cube = exports.Cube = _Cube2.default;
 
 /***/ },
 /* 540 */
@@ -49972,6 +50087,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRouter = __webpack_require__(220);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -50000,14 +50117,19 @@
 		}
 	
 		_createClass(Sidebar, [{
-			key: 'onClickMenuButton',
-			value: function onClickMenuButton(e) {
+			key: 'toggleMenu',
+			value: function toggleMenu() {
+	
 				if (this.state.menuStatus) {
+					var contentWrapper = document.getElementById('content-wrapper');
+					contentWrapper.className = "";
 					this.setState({
 						menuStatus: false,
 						menuButtonStatus: false
 					});
 				} else {
+					var _contentWrapper = document.getElementById('content-wrapper');
+					_contentWrapper.className = "open";
 					this.setState({
 						menuStatus: true,
 						menuButtonStatus: true
@@ -50015,11 +50137,40 @@
 				}
 			}
 		}, {
+			key: 'onClickMenuButton',
+			value: function onClickMenuButton(e) {
+				this.toggleMenu();
+			}
+		}, {
+			key: 'onClickMenuItem',
+			value: function onClickMenuItem(e) {
+				this.toggleMenu();
+				var name = e.target.name;
+	
+				var contentSections = document.getElementsByClassName('section-wrapper'),
+				    miloWrapper = document.getElementById('milo-wrapper'),
+				    targetElem = document.getElementById(name);
+				Array.prototype.forEach.call(contentSections, function (section) {
+					var className = section.className.split(' '),
+					    index = className.findIndex(function (str) {
+						return str === 'active';
+					});
+					if (index >= 0) {
+						// if index exist
+						className.splice(index, 1);
+					}
+					section.className = className.join(' ');
+				});
+	
+				if (name === 'about') miloWrapper.className = "active";else miloWrapper.className = "";
+				targetElem.className += " active";
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					{ id: 'sidebar' },
+					{ id: 'sidebar', style: this.props.parallex(35, { fixed: true }) },
 					_react2.default.createElement(
 						'div',
 						{ id: 'btn-menu',
@@ -50034,34 +50185,6 @@
 						{ className: classNames('menu', { open: this.state.menuStatus }) },
 						_react2.default.createElement(
 							'div',
-							{ className: 'contact-info' },
-							_react2.default.createElement(
-								'div',
-								null,
-								'Contact'
-							),
-							_react2.default.createElement(
-								'div',
-								null,
-								_react2.default.createElement(
-									'div',
-									null,
-									'Milo Kang'
-								),
-								_react2.default.createElement(
-									'div',
-									null,
-									'Fullstack Developer'
-								),
-								_react2.default.createElement(
-									'div',
-									null,
-									'New York, USA'
-								)
-							)
-						),
-						_react2.default.createElement(
-							'div',
 							null,
 							_react2.default.createElement(
 								'ul',
@@ -50069,29 +50192,40 @@
 								_react2.default.createElement(
 									'li',
 									null,
-									'About'
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ name: 'about', onClick: this.onClickMenuItem.bind(this) },
+										'About'
+									)
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'Projects'
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ name: 'projects', onClick: this.onClickMenuItem.bind(this) },
+										'Projects'
+									)
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'Blog'
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ name: 'blog', onClick: this.onClickMenuItem.bind(this) },
+										'Blog'
+									)
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'Contact'
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ name: 'contact', onClick: this.onClickMenuItem.bind(this) },
+										'Contact'
+									)
 								)
 							)
-						),
-						_react2.default.createElement(
-							'div',
-							null,
-							'Copyright 2017 \xA9 Milo Kang'
 						)
 					)
 				);
@@ -50105,6 +50239,1726 @@
 
 /***/ },
 /* 557 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Container = __webpack_require__(558);
+	
+	var _Container2 = _interopRequireDefault(_Container);
+	
+	var _Detail = __webpack_require__(560);
+	
+	var _Detail2 = _interopRequireDefault(_Detail);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  Container: _Container2.default,
+	  Detail: _Detail2.default
+	};
+
+/***/ },
+/* 558 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _index = __webpack_require__(539);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var classNames = __webpack_require__(559);
+	
+	var propTypes = {
+	  current: _react2.default.PropTypes.number, //current section index do I need this???
+	  dimensionStyle: _react2.default.PropTypes.string
+	};
+	
+	var defaultProps = {
+	  current: 0,
+	  dimensionStyle: 'flat'
+	};
+	
+	var smartObjectStyle = {
+	  position: 'absolute',
+	  transformStyle: 'flat',
+	  backfaceVisibility: 'hidden'
+	};
+	
+	var wrapperStyle = Object.assign({
+	  display: 'block',
+	  width: '100%',
+	  height: 'auto',
+	  top: 0,
+	  left: 0,
+	  right: 0,
+	  bottom: 0,
+	  margin: '20px 0px 20px 20px'
+	}, smartObjectStyle);
+	
+	var backgroundStyle = Object.assign({
+	  transform: 'matrix(1, 0, 0, 1, 0, 0)',
+	  width: '100%',
+	  height: '100%',
+	  background: 'rgb(41, 41, 41)',
+	  opacity: '0.9'
+	}, smartObjectStyle);
+	
+	var childrenWrapperStyle = Object.assign({
+	  transform: 'translate3d(0px, 0px, 0px)',
+	  width: '100%',
+	  height: '100%'
+	}, smartObjectStyle);
+	
+	var ContentContainer = function (_React$Component) {
+	  _inherits(ContentContainer, _React$Component);
+	
+	  function ContentContainer(props) {
+	    _classCallCheck(this, ContentContainer);
+	
+	    return _possibleConstructorReturn(this, (ContentContainer.__proto__ || Object.getPrototypeOf(ContentContainer)).call(this, props));
+	  }
+	
+	  _createClass(ContentContainer, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      if (this.props.current !== nextProps.current) {
+	        // console.log(this.props.current, nextProps.current)
+	      }
+	    }
+	  }, {
+	    key: 'renderInfo',
+	    value: function renderInfo(current) {
+	      var _this2 = this;
+	
+	      return _react2.default.Children.map(this.props.children, function (child, index) {
+	        if (_this2.props.current === index) {
+	          var childProps = Object.assign({}, child.props);
+	          // console.log(child, childProps)
+	          childProps.content = null;
+	          return _react2.default.cloneElement(child, childProps);
+	        }
+	      });
+	    }
+	  }, {
+	    key: 'renderDetail',
+	    value: function renderDetail(current) {
+	      var _this3 = this;
+	
+	      return _react2.default.Children.map(this.props.children, function (child, index) {
+	        if (_this3.props.current === index) {
+	
+	          // console.log('renderDetail', child)
+	          return _react2.default.cloneElement(child, child.props);
+	        }
+	      });
+	    }
+	  }, {
+	    key: 'renderCube',
+	    value: function renderCube() {
+	      var current = this.props.current;
+	
+	      var viewportHeight = document.documentElement.clientHeight,
+	          viewportWidth = document.documentElement.clientWidth;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'smart-object', style: wrapperStyle },
+	        _react2.default.createElement(
+	          _index.Cube.Container,
+	          { x: viewportWidth / 2, y: viewportHeight - 40, z: viewportWidth - 40, setScroll: this.props.setScroll },
+	          _react2.default.createElement(
+	            _index.Cube.Side,
+	            { side: 'front', rgba: this.props.children[this.props.current].props.backgroundColor },
+	            this.renderInfo(current)
+	          ),
+	          _react2.default.createElement(
+	            _index.Cube.Side,
+	            { side: 'back' },
+	            'Back'
+	          ),
+	          _react2.default.createElement(
+	            _index.Cube.Side,
+	            { side: 'left', rgba: this.props.children[this.props.current].props.backgroundColor },
+	            _react2.default.createElement(
+	              'div',
+	              { style: {
+	                  width: viewportWidth / 2 + 'vw',
+	                  position: 'relative',
+	                  marginLeft: 'auto'
+	                } },
+	              _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  null,
+	                  'HOME'
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  null,
+	                  'ABOUT'
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  null,
+	                  'PROJECTS'
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  null,
+	                  'BLOGS'
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _index.Cube.Side,
+	            { side: 'right', rgba: this.props.children[this.props.current].props.backgroundColor, overflow: 'scroll' },
+	            this.renderDetail(current)
+	          ),
+	          _react2.default.createElement(
+	            _index.Cube.Side,
+	            { side: 'top' },
+	            'Top'
+	          ),
+	          _react2.default.createElement(
+	            _index.Cube.Side,
+	            { side: 'bottom' },
+	            'Bottom'
+	          )
+	        )
+	      );
+	    }
+	  }, {
+	    key: 'renderFlat',
+	    value: function renderFlat() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'smart-object', style: wrapperStyle },
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'smart-btn menu-btn' },
+	            _react2.default.createElement('i', { className: 'fa fa-bars' })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'smart-btn rotate-right-btn' },
+	            _react2.default.createElement('i', { className: 'fa fa-angle-right' })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'smart-btn rotate-left-btn' },
+	            _react2.default.createElement('i', { className: 'fa fa-angle-left' })
+	          )
+	        ),
+	        _react2.default.createElement('div', { className: 'smart-object', style: backgroundStyle }),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'smart-object', style: childrenWrapperStyle },
+	          this.props.children[this.props.current]
+	        )
+	      );
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var viewportHeight = document.documentElement.clientHeight,
+	          viewportWidth = document.documentElement.clientWidth;
+	
+	      var containerStyle = Object.assign({
+	        zIndex: 999,
+	        width: viewportWidth / 2 + 'px', // expand to `${viewportWidth-40}px`
+	        height: '100%'
+	      }, smartObjectStyle);
+	
+	      var dimensionStyle = this.props.dimensionStyle;
+	
+	
+	      var contentWrapper = dimensionStyle === 'flat' ? this.renderFlat() : this.renderCube();
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'smart-object', style: containerStyle },
+	        contentWrapper
+	      );
+	    }
+	  }]);
+	
+	  return ContentContainer;
+	}(_react2.default.Component);
+	
+	ContentContainer.propTypes = propTypes;
+	ContentContainer.defaultProps = defaultProps;
+	
+	exports.default = ContentContainer;
+
+/***/ },
+/* 559 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+	
+	(function () {
+		'use strict';
+	
+		var hasOwn = {}.hasOwnProperty;
+	
+		function classNames () {
+			var classes = [];
+	
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+	
+				var argType = typeof arg;
+	
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+	
+			return classes.join(' ');
+		}
+	
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
+
+/***/ },
+/* 560 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactBootstrap = __webpack_require__(274);
+	
+	var _reactRouter = __webpack_require__(220);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var classNames = __webpack_require__(559);
+	
+	// let dummyData = {
+	//   title: 'Hopfinder',
+	//   subTitle: 'Beer enthusiast must have app',
+	//   description: "Artist Katie Paterson’s work is about natural phenomenon like time, the universe and volcanoes. We became a mix of a rational scientists and poetic artists when we shaped the digital experience to match her newest piece, Hollow."
+	// };
+	
+	// let dummyAbout = {
+	//   title: 'Hi there.',
+	//   subTitle: "My name is Milo & I'm a web developer with designer's state of mind.",
+	//   description: "I'm focused on creating simple, beautiful and easy to use digital solutions for all types of businesses with a passion for the web, and mobile development. When I’m not making websites, I tend to be working out, brew coffee , learning a new programming language.",
+	//   contents: {
+	
+	//   }
+	// };
+	var propTypes = {
+	  backgroundColor: _react2.default.PropTypes.object,
+	  bound: _react2.default.PropTypes.string,
+	  title: _react2.default.PropTypes.string,
+	  subheading: _react2.default.PropTypes.string,
+	  description: _react2.default.PropTypes.string,
+	  fontColor: _react2.default.PropTypes.string,
+	  highlightColor: _react2.default.PropTypes.string,
+	  links: _react2.default.PropTypes.array,
+	  technology: _react2.default.PropTypes.array
+	};
+	var defaultProps = {
+	  backgroundColor: {
+	    r: 0,
+	    g: 0,
+	    b: 0,
+	    a: 0.5
+	  },
+	  bound: '',
+	  title: 'Heading',
+	  subheading: 'Sub Heading',
+	  description: 'Lorem ipsum ....',
+	  fontColor: '#FFFFFF',
+	  highlightColor: '#FFFFFF',
+	  links: [],
+	  technology: []
+	};
+	
+	var WrapperStyle = {
+	  position: 'relative',
+	  width: '100%',
+	  height: '100%'
+	};
+	var ContentInfoStyle = {
+	  position: 'absolute',
+	  transformStyle: 'flat',
+	  backfaceVisibility: 'hidden',
+	  left: '52%',
+	  bottom: '70px',
+	  right: '0px',
+	  width: 'auto',
+	  maxWidth: '400px',
+	  height: 'auto',
+	  minHeight: '229px',
+	  margin: '0px 40px 0px 0px',
+	  display: 'block',
+	  cursor: 'pointer',
+	  overflow: 'visible'
+	};
+	
+	var ContentDetailStyle = {
+	  position: 'absolute',
+	  transformStyle: 'flat',
+	  backfaceVisibility: 'hidden',
+	  display: 'block',
+	  overflow: 'visible'
+	};
+	
+	var ContentDetail = function (_React$Component) {
+	  _inherits(ContentDetail, _React$Component);
+	
+	  function ContentDetail(props) {
+	    _classCallCheck(this, ContentDetail);
+	
+	    return _possibleConstructorReturn(this, (ContentDetail.__proto__ || Object.getPrototypeOf(ContentDetail)).call(this, props));
+	  }
+	
+	  _createClass(ContentDetail, [{
+	    key: 'renderInfo',
+	    value: function renderInfo() {
+	      var _props = this.props,
+	          title = _props.title,
+	          subheading = _props.subheading,
+	          description = _props.description,
+	          highlightColor = _props.highlightColor,
+	          children = _props.children,
+	          rotate = _props.rotate,
+	          technology = _props.technology;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'email smart-object' },
+	          'contact@milokang.com'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'copyright smart-object' },
+	          '\xA9 Copyright 2017'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'slogan smart-object' },
+	          'Let\'s build something great'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'content-info smart-object', onClick: function onClick() {
+	              rotate('right');
+	            } },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'heading' },
+	            title
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'sub-heading sub-heading-lg' },
+	            _react2.default.createElement(
+	              'span',
+	              { style: { color: highlightColor } },
+	              subheading
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'description hidden-sm' },
+	            description.slice(0, 200) + '...'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'technology hidden-md' },
+	            technology.length ? technology.map(function (tech, index) {
+	              return _react2.default.createElement(
+	                'div',
+	                { className: 'tech-tag', key: index },
+	                tech
+	              );
+	            }) : null
+	          )
+	        )
+	      );
+	    }
+	  }, {
+	    key: 'renderDetail',
+	    value: function renderDetail() {
+	      var _props2 = this.props,
+	          title = _props2.title,
+	          subheading = _props2.subheading,
+	          description = _props2.description,
+	          children = _props2.children,
+	          content = _props2.content,
+	          backgroundColor = _props2.backgroundColor,
+	          highlightColor = _props2.highlightColor,
+	          links = _props2.links;
+	
+	
+	      var bottomGradient = {
+	        position: 'fixed',
+	        background: 'linear-gradient(to bottom, rgba(255, 0, 0, 0), rgba(' + backgroundColor.r + ', ' + backgroundColor.g + ', ' + backgroundColor.b + ', ' + backgroundColor.a + '))'
+	      };
+	      var topGradient = {
+	        position: 'fixed',
+	        background: 'linear-gradient(to top, rgba(255, 0, 0, 0), rgba(' + backgroundColor.r + ', ' + backgroundColor.g + ', ' + backgroundColor.b + ', ' + backgroundColor.a + '))'
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'content-detail smart-object' },
+	          _react2.default.createElement(
+	            _reactBootstrap.Grid,
+	            { fluid: true },
+	            _react2.default.createElement(
+	              _reactBootstrap.Row,
+	              null,
+	              _react2.default.createElement(
+	                _reactBootstrap.Col,
+	                { className: 'info', xsHidden: true, mdHidden: true, lg: 4 },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'heading' },
+	                  title
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'sub-heading sub-heading-lg' },
+	                  _react2.default.createElement(
+	                    'span',
+	                    { style: { color: highlightColor } },
+	                    subheading
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'description' },
+	                  description
+	                ),
+	                links.length ? links.map(function (link, index) {
+	                  return _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { key: index, className: 'link-btn btn', href: link.url, target: '_blank' },
+	                    link.title
+	                  );
+	                }) : null
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Col,
+	                { xs: 12, lg: 8 },
+	                content()
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement('div', { className: 'top-grad', style: topGradient }),
+	        _react2.default.createElement('div', { className: 'bottom-grad', style: bottomGradient })
+	      );
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _props3 = this.props,
+	          title = _props3.title,
+	          subheading = _props3.subheading,
+	          description = _props3.description,
+	          children = _props3.children,
+	          content = _props3.content;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { style: WrapperStyle },
+	        content ? this.renderDetail() : this.renderInfo()
+	      );
+	    }
+	  }]);
+	
+	  return ContentDetail;
+	}(_react2.default.Component);
+	
+	ContentDetail.propTypes = propTypes;
+	ContentDetail.defaultProps = defaultProps;
+	
+	exports.default = ContentDetail;
+
+/***/ },
+/* 561 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactBootstrap = __webpack_require__(274);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var classNames = __webpack_require__(559);
+	
+	var Main = function (_React$Component) {
+	  _inherits(Main, _React$Component);
+	
+	  function Main() {
+	    _classCallCheck(this, Main);
+	
+	    return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
+	  }
+	
+	  _createClass(Main, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {}
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var defaultActive = this.props.defaultActive;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'main', className: classNames('section', 'fullHeight', 'active') },
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'THIS IS TEST TEXT'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Main;
+	}(_react2.default.Component);
+	
+	exports.default = Main;
+
+/***/ },
+/* 562 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// import _ from 'lodash';
+	
+	// ------------- VARIABLES ------------- //
+	var ticking = false;
+	var isFirefox = /Firefox/i.test(navigator.userAgent);
+	var isIe = /MSIE/i.test(navigator.userAgent) || /Trident.*rv\:11\./i.test(navigator.userAgent);
+	var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive) 
+	var slideDurationSetting = 600; //Amount of time for which slide is "locked"
+	
+	var ParallaxContainer = function (_React$Component) {
+	  _inherits(ParallaxContainer, _React$Component);
+	
+	  function ParallaxContainer(props) {
+	    _classCallCheck(this, ParallaxContainer);
+	
+	    var _this = _possibleConstructorReturn(this, (ParallaxContainer.__proto__ || Object.getPrototypeOf(ParallaxContainer)).call(this, props));
+	
+	    _this.state = {
+	      current: 0,
+	      zIndex: 0,
+	      mouseX: 0,
+	      mouseY: 0,
+	      lockScroll: false
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(ParallaxContainer, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.initCurrent();
+	    }
+	  }, {
+	    key: 'setScroll',
+	    value: function setScroll(bool) {
+	      // console.log('setScroll', bool)
+	      this.setState({ lockScroll: bool });
+	    }
+	  }, {
+	    key: 'onMouseMove',
+	    value: function onMouseMove(e) {
+	      if (!ticking) {
+	        // this.initCurrent();
+	        this.setState({
+	          mouseX: e.pageX,
+	          mouseY: e.pageY
+	        });
+	      }
+	    }
+	  }, {
+	    key: 'nextIndex',
+	    value: function nextIndex(direction, totalIndexNum) {
+	      // this function returns next current index number
+	      var index = this.state.current;
+	      if (direction && direction === 'up') index++;
+	      if (direction && direction === 'down') index--;
+	      if (index < 0) index = totalIndexNum - 1;
+	      if (index > totalIndexNum - 1) index = 0;
+	      return index;
+	    }
+	  }, {
+	    key: 'indexLayer',
+	    value: function indexLayer() {
+	      var direction = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+	      var newIndex = arguments[1];
+	      var totalIndexNum = arguments[2];
+	
+	      var layers = {
+	        prev: null,
+	        back: totalIndexNum - 1,
+	        front: 0
+	      };
+	
+	      if (direction === 'up') {
+	        layers.prev = this.state.current - 1 < 0 ? totalIndexNum - 1 : this.state.current - 1;
+	        layers.back = this.state.current;
+	        layers.front = newIndex;
+	      }
+	
+	      if (direction === 'down') {
+	        layers.back = newIndex;
+	        layers.front = this.state.current;
+	      }
+	
+	      return layers;
+	    }
+	  }, {
+	    key: 'applyLayerStyle',
+	    value: function applyLayerStyle() {
+	      var elements = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+	      var styleObj = arguments[1];
+	      var layerIndex = arguments[2];
+	
+	      var _loop = function _loop(layer) {
+	        var _loop2 = function _loop2(cssProp) {
+	          // console.log( style, styleObj[layer], styleObj[layer][style] );
+	          elements.forEach(function (elem) {
+	            if (layer === 'prev' && typeof layerIndex.prev !== 'number') return;
+	            elem[layerIndex[layer]].style[cssProp] = styleObj[layer][cssProp];
+	          });
+	        };
+	
+	        for (var cssProp in styleObj[layer]) {
+	          _loop2(cssProp);
+	        }
+	      };
+	
+	      // this function applies styles for front, back, previous layers
+	      for (var layer in styleObj) {
+	        _loop(layer);
+	      }
+	    }
+	  }, {
+	    key: 'initCurrent',
+	    value: function initCurrent() {
+	      var viewportHeight = document.documentElement.clientHeight,
+	          sections = document.getElementsByClassName('parallax-section'),
+	
+	      // contents = document.getElementsByClassName('parallax-content'),
+	      layers = this.indexLayer(null, this.state.current, sections.length),
+	          styles = {
+	        back: {
+	          visibility: 'visible',
+	          zIndex: 1,
+	          transform: 'matrix(1, 0, 0, 1, 0, ' + -viewportHeight / 2 + ')'
+	        },
+	        front: {
+	          visibility: 'visible',
+	          zIndex: 2,
+	          transform: 'matrix(1, 0, 0, 1, 0, 0)'
+	        }
+	      };
+	
+	      this.applyLayerStyle([sections], styles, layers);
+	    }
+	  }, {
+	    key: 'setCurrent',
+	    value: function setCurrent(direction) {
+	      // set new current index
+	      var sections = document.getElementsByClassName('parallax-section');
+	      var index = this.nextIndex(direction, sections.length);
+	      var layers = this.indexLayer(direction, index, sections.length);
+	      // need to track 3 layers    
+	      this.layerTransition(layers, slideDurationSetting, direction);
+	      // this.slideDurationTimeout(slideDurationSetting);        
+	      this.setState({
+	        current: index,
+	        zIndex: this.state.zIndex + 2
+	      });
+	    }
+	  }, {
+	    key: 'parallaxScroll',
+	    value: function parallaxScroll(e) {
+	      // let delta = e.deltaY;
+	
+	      // if (isFirefox) {
+	      //   //Set delta for Firefox
+	      //   delta = e.detail * (-120);
+	      // } else if (isIe) {
+	      //   //Set delta for IE
+	      //   delta = -e.deltaY;
+	      // } else {
+	      //   //Set delta for all other browsers
+	      //   delta = e.wheelDelta;
+	      // }
+	      if (!ticking && !this.state.lockScroll) {
+	        if (e.deltaY <= -scrollSensitivitySetting) {
+	          ticking = true;
+	          this.setCurrent('down');
+	        }
+	        if (e.deltaY >= scrollSensitivitySetting) {
+	          ticking = true;
+	          this.setCurrent('up');
+	        }
+	      }
+	    }
+	  }, {
+	    key: 'layerTransition',
+	    value: function layerTransition(layers, slideDuration, direction) {
+	      // console.log('layerTransition', layers)
+	      var framInterval = 10,
+	          timeframes = slideDuration / framInterval,
+	          transition = setInterval(transitionCallback.bind(this), framInterval);
+	
+	      var viewportHeight = document.documentElement.clientHeight,
+	          backLayerDistancePerFrame = viewportHeight / 2 / timeframes,
+	          frontLayerDistancePerFrame = viewportHeight / timeframes,
+	          backLayerY = direction === 'up' ? 0 : -viewportHeight / 2,
+	          frontLayerY = direction === 'up' ? viewportHeight : 0;
+	
+	      var sections = document.getElementsByClassName('parallax-section');
+	
+	      var styles = {
+	        back: {
+	          visibility: 'visible',
+	          zIndex: this.state.zIndex + 1
+	        },
+	        front: {
+	          visibility: 'visible',
+	          zIndex: this.state.zIndex + 2
+	        },
+	        prev: {
+	          visibility: 'visible',
+	          transform: 'matrix(1, 0, 0, 1, 0, ' + viewportHeight + ')'
+	        }
+	      };
+	      this.applyLayerStyle([sections], styles, layers);
+	
+	      function transitionCallback() {
+	
+	        if (timeframes <= 0) {
+	          clearInterval(transition);
+	          ticking = false;
+	          return;
+	        }
+	
+	        if (direction === 'up') {
+	          backLayerY -= backLayerDistancePerFrame; // from 0 to - backLayerDistance        
+	          frontLayerY -= frontLayerDistancePerFrame; // from frontLayerDistance to 0
+	        } else {
+	          backLayerY += backLayerDistancePerFrame; // from - backLayerDistance to 0
+	          frontLayerY += frontLayerDistancePerFrame; // from 0 to frontLayerDistance
+	        }
+	
+	        this.applyLayerStyle([sections], {
+	          back: {
+	            transform: 'matrix(1, 0, 0, 1, 0, ' + backLayerY + ')'
+	          },
+	          front: {
+	            transform: 'matrix(1, 0, 0, 1, 0, ' + frontLayerY + ')'
+	          }
+	        }, layers);
+	        timeframes--;
+	      }
+	    }
+	
+	    // slideDurationTimeout(slideDuration) {    
+	    //   setTimeout(function() {
+	    //     ticking = false;
+	    //   }, slideDuration);
+	    // }
+	
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      var _state = this.state,
+	          current = _state.current,
+	          mouseX = _state.mouseX,
+	          mouseY = _state.mouseY;
+	
+	
+	      var viewportHeight = document.documentElement.clientHeight,
+	          elementProps = Object.assign({
+	        className: "parallax-container",
+	        onMouseMove: this.onMouseMove.bind(this)
+	
+	      });
+	
+	      if (!this.props.lock) elementProps.onWheel = this.parallaxScroll.bind(this);
+	
+	      var children = _react2.default.Children.map(this.props.children, function (child) {
+	        // console.log(child)
+	        var childProps = {};
+	        if (child.type.name === 'ParallaxSection') {
+	          childProps = {
+	            style: {
+	              zIndex: 1,
+	              visibility: 'hidden',
+	              transform: 'matrix(1, 0, 0, 1, 0, ' + viewportHeight + ')'
+	            },
+	            current: current,
+	            mouseX: mouseX,
+	            mouseY: mouseY
+	
+	          };
+	        } else if (child.type.name === 'ParallaxNav') {
+	          childProps.setCurrent = _this2.setCurrent.bind(_this2);
+	        } else if (child.type.name === 'ContentContainer') {
+	          childProps.current = current;
+	          childProps.setScroll = _this2.setScroll.bind(_this2);
+	        } else {
+	          childProps.childProps = child.props;
+	        }
+	        return _react2.default.cloneElement(child, childProps);
+	      });
+	      // console.log(children, this.state)
+	
+	      return _react2.default.createElement('div', _extends({}, elementProps), [children]);
+	    }
+	  }]);
+	
+	  return ParallaxContainer;
+	}(_react2.default.Component);
+	
+	exports.default = ParallaxContainer;
+
+/***/ },
+/* 563 */,
+/* 564 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classNames = __webpack_require__(559);
+	
+	var _classNames2 = _interopRequireDefault(_classNames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var propTypes = {
+	  current: _react2.default.PropTypes.number, //current section index
+	  mouseX: _react2.default.PropTypes.number,
+	  mouseY: _react2.default.PropTypes.number,
+	  fullHeight: _react2.default.PropTypes.bool,
+	  style: _react2.default.PropTypes.object
+	};
+	
+	var defaultProps = {
+	  current: 0,
+	  mouseX: 0,
+	  mouseY: 0,
+	  fullHeight: false,
+	  style: {}
+	};
+	
+	/*
+	 * Full page parallax scrolldown and up
+	 */
+	
+	var ParallaxSection = function (_React$Component) {
+	  _inherits(ParallaxSection, _React$Component);
+	
+	  function ParallaxSection() {
+	    _classCallCheck(this, ParallaxSection);
+	
+	    return _possibleConstructorReturn(this, (ParallaxSection.__proto__ || Object.getPrototypeOf(ParallaxSection)).apply(this, arguments));
+	  }
+	
+	  _createClass(ParallaxSection, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props,
+	          id = _props.id,
+	          style = _props.style,
+	          fullHeight = _props.fullHeight,
+	          current = _props.current,
+	          mouseX = _props.mouseX,
+	          mouseY = _props.mouseY;
+	
+	
+	      var classes = (0, _classNames2.default)('parallax-section', {
+	        // current: current,
+	        // next: next,
+	        // prev: prev,
+	        fullHeight: fullHeight
+	      });
+	
+	      var children = _react2.default.Children.map(this.props.children, function (child) {
+	        return _react2.default.cloneElement(child, { current: current, mouseX: mouseX, mouseY: mouseY });
+	      });
+	
+	      return _react2.default.createElement('div', {
+	        id: id,
+	        className: classes,
+	        style: style
+	      }, [children]);
+	    }
+	  }]);
+	
+	  return ParallaxSection;
+	}(_react2.default.Component);
+	
+	ParallaxSection.propTypes = propTypes;
+	ParallaxSection.defaultProps = defaultProps;
+	
+	exports.default = ParallaxSection;
+
+/***/ },
+/* 565 */,
+/* 566 */,
+/* 567 */,
+/* 568 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(32);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _Content = __webpack_require__(569);
+	
+	var _Content2 = _interopRequireDefault(_Content);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var classNames = __webpack_require__(559);
+	var propTypes = {
+	  // images: React.PropTypes.array,
+	  current: _react2.default.PropTypes.number, //current section index
+	  mouseX: _react2.default.PropTypes.number,
+	  mouseY: _react2.default.PropTypes.number,
+	
+	  effectWeight: _react2.default.PropTypes.number,
+	  enableSmoothing: _react2.default.PropTypes.bool,
+	  outerBuffer: _react2.default.PropTypes.number,
+	  elementDepth: _react2.default.PropTypes.number,
+	  perspectiveMulti: _react2.default.PropTypes.number
+	};
+	
+	var defaultProps = {
+	  // images: [],
+	  current: 0,
+	  mouseX: 0,
+	  mouseY: 0,
+	
+	  effectWeight: 1.2,
+	  enableSmoothing: true,
+	  outerBuffer: 1.1,
+	  elementDepth: 145,
+	  perspectiveMulti: 1
+	};
+	
+	var defaultDimensions = {
+	  position: 'absolute',
+	  width: '110%',
+	  height: '110%',
+	  top: '-5%',
+	  left: '-5%'
+	};
+	
+	var containerStyle = {
+	  width: '100%',
+	  height: '100%',
+	  overflow: 'hidden'
+	};
+	
+	var parent3dStyle = {
+	  width: '100%',
+	  height: '100%',
+	  position: 'relative',
+	  transformStyle: 'preserve-3d',
+	  opacity: 1
+	};
+	
+	var DistortionContainer = function (_React$Component) {
+	  _inherits(DistortionContainer, _React$Component);
+	
+	  function DistortionContainer(props) {
+	    _classCallCheck(this, DistortionContainer);
+	
+	    var _this = _possibleConstructorReturn(this, (DistortionContainer.__proto__ || Object.getPrototypeOf(DistortionContainer)).call(this, props));
+	
+	    _this.options = {
+	      effectWeight: 1,
+	      directions: [1, 1, 1, 1, -1, -1, 1, 1],
+	      weights: [0.0000310, 0.0001800, 0.0000164, 0.0000019, 0.0001200],
+	      basePerspective: 9000
+	    };
+	    _this.state = {
+	      matrix3d: 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)',
+	      dimensions: null,
+	      center: {
+	        x: document.documentElement.clientWidth * props.outerBuffer / 2,
+	        y: document.documentElement.clientHeight * props.outerBuffer / 2
+	      }
+	    };
+	    _this.onResize = _this.onResize.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(DistortionContainer, [{
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      if (typeof window !== 'undefined') window.removeEventListener('resize', this.onResize);
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _props = this.props,
+	          mouseX = _props.mouseX,
+	          mouseY = _props.mouseY;
+	
+	      this.calculateOuterContainer();
+	      this.setTransform(mouseX, mouseY);
+	
+	      if (typeof window !== 'undefined') window.addEventListener('resize', this.onResize, false);
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      var _props2 = this.props,
+	          mouseX = _props2.mouseX,
+	          mouseY = _props2.mouseY;
+	
+	      if (mouseX !== nextProps.mouseX || mouseY !== nextProps.mouseY) {
+	        this.setTransform(nextProps.mouseX, nextProps.mouseY);
+	      }
+	    }
+	  }, {
+	    key: 'onResize',
+	    value: function onResize() {
+	      console.log('Resizing!');
+	      this.calculateOuterContainer();
+	    }
+	  }, {
+	    key: 'calculateOuterContainer',
+	    value: function calculateOuterContainer() {
+	      var container = _reactDom2.default.findDOMNode(this);
+	      var width = container.offsetWidth * this.props.outerBuffer,
+	          height = container.offsetHeight * this.props.outerBuffer,
+	          left = Math.abs((width - container.offsetWidth) / 2),
+	          top = Math.abs((height - container.offsetHeight) / 2);
+	
+	      // console.log('calculateOuterContainer', container, container.offsetWidth, container.clientWidth);
+	      // console.log('calculateOuterContainer', width, height, left, top)
+	      this.setState({
+	        dimensions: {
+	          width: width.toFixed(2),
+	          height: height.toFixed(2),
+	          left: -left.toFixed(2),
+	          top: -top.toFixed(2)
+	        },
+	        center: {
+	          x: (width / 2).toFixed(2),
+	          y: (height / 2).toFixed(2)
+	        }
+	      });
+	    }
+	  }, {
+	    key: 'setTransform',
+	    value: function setTransform(mouseX, mouseY) {
+	      var viewportHeight = document.documentElement.clientHeight,
+	          viewportWidth = document.documentElement.clientWidth,
+	          positionX = mouseX,
+	          positionY = mouseY;
+	
+	      // console.log('setTransform', mouseX, mouseY, positionX, positionY, this.generateTransformString(positionX, positionY))
+	      this.setState({
+	        matrix3d: this.generateTransformString(positionX, positionY)
+	      });
+	    }
+	  }, {
+	    key: 'getDistance2d',
+	    value: function getDistance2d(currX, currY, targetX, targetY) {
+	      // console.log('getDistance2d', currX, currY, targetX, targetY)
+	      return Math.sqrt(Math.pow(currX - targetX, 2) + Math.pow(currY - targetY, 2));
+	    }
+	  }, {
+	    key: 'getDistanceFromCenter',
+	    value: function getDistanceFromCenter(appliedX, appliedY) {
+	      return this.getDistance2d(appliedX, appliedY, this.state.center.x, this.state.center.y);
+	    }
+	  }, {
+	    key: 'getDistanceFromEdgeCenterAndCenter',
+	    value: function getDistanceFromEdgeCenterAndCenter(fromCenter, fromX, fromY) {
+	      //divide by 50 instead of 100 because distance is already divided by 2
+	      return -(fromCenter / 100 * (fromX / 50) * (fromY / 50));
+	    }
+	  }, {
+	    key: 'applyTransform',
+	    value: function applyTransform(distance, effect) {
+	      return distance * this.options.weights[effect];
+	    }
+	  }, {
+	    key: 'calculateTransform',
+	    value: function calculateTransform(appliedX, appliedY) {
+	      // console.log('calculateTransform', appliedX, appliedY)
+	      var _transforms = [];
+	      var _directions = this.options.directions;
+	      var _temp;
+	
+	      var _fromCenter = this.getDistanceFromCenter(appliedX, appliedY);
+	      var _fromX = appliedY - this.state.center.y; //
+	      var _fromY = appliedX - this.state.center.x; //
+	
+	      var _fromCenterAndEdge = this.getDistanceFromEdgeCenterAndCenter(_fromCenter, _fromX, _fromY);
+	
+	      // console.log('calculateTransform2', _fromCenter, appliedX, appliedY, _fromX, _fromY)
+	      var effectWeight = this.props.effectWeight;
+	
+	      // Lets add our transforms to the array
+	
+	      _transforms.push(_directions[0] * (1 - this.applyTransform(_fromCenter, 0) * effectWeight));
+	      _transforms.push(_directions[1] * (this.applyTransform(_fromY, 1) * effectWeight));
+	      _transforms.push(_directions[2] * (this.applyTransform(_fromCenterAndEdge, 2) * effectWeight));
+	      _transforms.push(_directions[3] * (1 - this.applyTransform(_fromCenter, 3) * effectWeight));
+	      _transforms.push(_directions[4] * (this.applyTransform(_fromX, 4) * effectWeight));
+	      _transforms.push(_directions[5] * _transforms[1]);
+	      _transforms.push(_directions[6] * _transforms[4]);
+	      _transforms.push(_directions[7] * Math.abs(_transforms[3]));
+	      _transforms.forEach(function (transform, index) {
+	        _transforms[index] = transform.toFixed(5);
+	      });
+	
+	      return _transforms;
+	    }
+	  }, {
+	    key: 'generateTransformString',
+	    value: function generateTransformString(appliedX, appliedY) {
+	      var _transforms = this.calculateTransform(appliedX, appliedY);
+	
+	      var _transformString = 'matrix3d(' + _transforms[0] + ', 0, ' + _transforms[1] + ', 0, ' + _transforms[2] + ', ' + _transforms[3] + ', ' + _transforms[4] + ', 0, ' + _transforms[5] + ', ' + _transforms[6] + ', ' + _transforms[7] + ', 0, ' + '0, 0, 100, 1)';
+	
+	      return _transformString;
+	    }
+	  }, {
+	    key: 'setImageDefaults',
+	    value: function setImageDefaults(element, index) {
+	      // console.log('setImageDefaults', element);
+	      var elementProps = {};
+	      elementProps = Object.assign({
+	        style: {
+	          position: 'absolute',
+	          transform: 'translate3d(0px,  -0px, ' + (index + 1) * this.props.elementDepth + 'px)',
+	          width: '100%',
+	          height: '100%'
+	        }
+	      }, element.props);
+	
+	      if (element.type === 'img') {
+	        elementProps.width = 2020;
+	        elementProps.height = 1080;
+	      }
+	
+	      return elementProps;
+	    }
+	  }, {
+	    key: 'renderChildren',
+	    value: function renderChildren() {
+	      var _this2 = this;
+	
+	      var dimensions = this.state.dimensions;
+	
+	      var children = _react2.default.Children.map(this.props.children, function (child, index) {
+	        // child.props = this.setImageDefaults(child);
+	
+	        var contentProps = Object.assign({
+	          index: index,
+	          dimensions: dimensions
+	        }, _this2.props);
+	
+	        return _react2.default.createElement(
+	          _Content2.default,
+	          contentProps,
+	          _react2.default.cloneElement(child, _this2.setImageDefaults(child, index))
+	        );
+	        // return React.cloneElement(child, {...this.props})
+	      });
+	
+	      return children;
+	    }
+	  }, {
+	    key: 'generateBufferDimensionsStyle',
+	    value: function generateBufferDimensionsStyle() {
+	      var dimensions = this.state.dimensions;
+	
+	      // console.log('generateBufferDimensionsStyle', dimensions)
+	
+	      return {
+	        position: 'absolute',
+	        width: dimensions.width + 'px',
+	        height: dimensions.height + 'px',
+	        top: dimensions.top + 'px',
+	        left: dimensions.left + 'px'
+	      };
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var dimensions = this.state.dimensions;
+	      var basePerspective = this.options.basePerspective;
+	      var outerBuffer = this.props.outerBuffer;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { style: containerStyle },
+	        _react2.default.createElement(
+	          'div',
+	          { style: !dimensions ? defaultDimensions : this.generateBufferDimensionsStyle() },
+	          _react2.default.createElement(
+	            'div',
+	            { style: Object.assign({ perspective: basePerspective * outerBuffer + 'px' }, parent3dStyle) },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'smart-object', style: {
+	                  position: 'relative',
+	                  transform: this.state.matrix3d,
+	                  transformStyle: 'preserve-3d',
+	                  width: '100%',
+	                  height: '100%',
+	                  pointerEvents: 'none'
+	                } },
+	              this.renderChildren()
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return DistortionContainer;
+	}(_react2.default.Component);
+	
+	DistortionContainer.propTypes = propTypes;
+	DistortionContainer.defaultProps = defaultProps;
+	
+	exports.default = DistortionContainer;
+
+/***/ },
+/* 569 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(32);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var classNames = __webpack_require__(559);
+	var propTypes = {
+	  src: _react2.default.PropTypes.string,
+	  mouseX: _react2.default.PropTypes.number,
+	  mouseY: _react2.default.PropTypes.number,
+	  style: _react2.default.PropTypes.object,
+	  dimensions: _react2.default.PropTypes.object,
+	  depth: _react2.default.PropTypes.number,
+	  index: _react2.default.PropTypes.number
+	};
+	
+	var defaultProps = {
+	  src: '',
+	  mouseX: 0,
+	  mouseY: 0,
+	  style: {
+	    width: 100 + '%',
+	    height: 100 + '%'
+	  },
+	  dimensions: {},
+	  depth: 10,
+	  index: 0
+	};
+	
+	var DistortionContent = function (_React$Component) {
+	  _inherits(DistortionContent, _React$Component);
+	
+	  function DistortionContent(props) {
+	    _classCallCheck(this, DistortionContent);
+	
+	    var _this = _possibleConstructorReturn(this, (DistortionContent.__proto__ || Object.getPrototypeOf(DistortionContent)).call(this, props));
+	
+	    _this.state = {
+	      width: 2020,
+	      height: 1180,
+	      top: window.innerHeight / 2 - 1180 / 2,
+	      left: window.innerWidth / 2 - 2020 / 2
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(DistortionContent, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.setObjectDimensions(this.state.width, this.state.height);
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      if (this.props.dimensions !== nextProps.dimensions) {
+	        // console.log('componentWillReceiveProps', nextProps.dimensions)
+	        this.setObjectDimensions(nextProps.dimensions.width, nextProps.dimensions.height);
+	      }
+	    }
+	  }, {
+	    key: 'setObjectDimensions',
+	    value: function setObjectDimensions(width, height) {
+	      var element = _reactDom2.default.findDOMNode(this);
+	      var aspectRatioX = void 0,
+	          aspectRatioY = void 0,
+	          aspectRatioXY = void 0,
+	          aspectX = void 0,
+	          aspectY = void 0,
+	          left = 0,
+	          top = 0;
+	
+	      aspectRatioXY = width / height;
+	      // console.log(width, height, aspectRatioXY, (element.naturalWidth / element.naturalHeight))
+	      if (aspectRatioXY >= element.naturalWidth / element.naturalHeight) {
+	        // landscape
+	        aspectRatioX = width / element.naturalWidth;
+	        aspectX = width;
+	        aspectY = element.naturalHeight * aspectRatioX;
+	        top = -((aspectY - height) / 2);
+	      } else {
+	        // portrait
+	        aspectRatioY = height / element.naturalHeight;
+	        aspectX = element.naturalWidth * aspectRatioY;
+	        aspectY = height;
+	        left = -((aspectX - width) / 2);
+	      }
+	
+	      element.style.width = aspectX + 'px';
+	      element.style.height = aspectY + 'px';
+	      element.style.transform = 'translate3d(' + left + 'px, 0px, ' + (this.props.index + 1) * this.props.elementDepth + 'px)';
+	
+	      this.setState({
+	        width: aspectX,
+	        height: aspectY,
+	        top: top,
+	        left: left
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _state = this.state,
+	          width = _state.width,
+	          height = _state.height,
+	          top = _state.top,
+	          left = _state.left;
+	
+	      var elementProps = Object.assign({
+	        style: {
+	          width: width,
+	          height: height,
+	          transform: 'translate3d(' + left + 'px, ' + top + 'px, ' + this.props.index * 200 + 'px)'
+	        }
+	      }, this.props.children.props);
+	
+	      return _react2.default.cloneElement(this.props.children, elementProps);
+	    }
+	  }]);
+	
+	  return DistortionContent;
+	}(_react2.default.Component);
+	
+	DistortionContent.propTypes = propTypes;
+	DistortionContent.defaultProps = defaultProps;
+	
+	exports.default = DistortionContent;
+
+/***/ },
+/* 570 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(32);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Beer = function (_React$Component) {
+		_inherits(Beer, _React$Component);
+	
+		function Beer(props) {
+			_classCallCheck(this, Beer);
+	
+			var _this = _possibleConstructorReturn(this, (Beer.__proto__ || Object.getPrototypeOf(Beer)).call(this, props));
+	
+			_this.state = {
+				bubbles: []
+			};
+			return _this;
+		}
+	
+		_createClass(Beer, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				this.createBubbles(30);
+			}
+		}, {
+			key: 'createBubbles',
+			value: function createBubbles(bubbleCount) {
+				var element = _reactDom2.default.findDOMNode(this);
+	
+				var blur = void 0,
+				    delay = void 0,
+				    opacity = void 0,
+				    scale = void 0,
+				    size = void 0,
+				    speed = void 0,
+				    xPos = void 0,
+				    yPos = void 0;
+	
+				var defaults = {
+					MAX_BUBBLE_SIZE: 100,
+					MAX_BLUR: 10,
+					MAX_ANIMATION_DURATION: 8000
+				};
+	
+				var result = [];
+	
+				for (var i = 0; i < bubbleCount; i++) {
+					xPos = Math.floor(Math.random() * 100 + 1);
+					yPos = Math.floor(Math.random() * 25 + 1);
+					size = Math.floor(Math.random() * defaults.MAX_BUBBLE_SIZE + 1);
+					delay = Math.floor(Math.random() * 100 * bubbleCount + 1);
+					scale = size / defaults.MAX_BUBBLE_SIZE;
+					blur = scale * defaults.MAX_BLUR;
+					speed = (1 - scale * scale) * defaults.MAX_ANIMATION_DURATION;
+					opacity = 0.25 * (1 - scale);
+	
+					result.push({
+						xPos: xPos,
+						yPos: yPos,
+						size: size,
+						delay: delay,
+						scale: scale,
+						blur: blur,
+						speed: speed,
+						opacity: opacity
+					});
+				}
+				this.setState({ bubbles: result });
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'beer' },
+					this.state.bubbles.length ? this.state.bubbles.map(function (bubble, index) {
+						return _react2.default.createElement('div', {
+							className: 'bubble',
+							key: index,
+							style: {
+								width: bubble.size + 'px',
+								height: bubble.size + 'px',
+								left: bubble.xPos + '%',
+								top: bubble.yPos + '%',
+								animationDelay: bubble.delay + "ms",
+								animationDuration: bubble.speed + "ms",
+								filter: "blur(" + bubble.blur + "px)",
+								opacity: bubble.opacity
+							}
+						});
+					}) : null
+				);
+			}
+		}]);
+	
+		return Beer;
+	}(_react2.default.Component);
+	
+	exports.default = Beer;
+
+/***/ },
+/* 571 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50133,51 +51987,99 @@
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Container Component
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * ====================
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.vpnqg5gly
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	/* -----------------    COMPONENT     ------------------ */
 	
 	var RootComponent = function (_Component) {
 	  _inherits(RootComponent, _Component);
 	
-	  function RootComponent(props) {
+	  function RootComponent() {
 	    _classCallCheck(this, RootComponent);
 	
-	    return _possibleConstructorReturn(this, (RootComponent.__proto__ || Object.getPrototypeOf(RootComponent)).call(this, props));
+	    return _possibleConstructorReturn(this, (RootComponent.__proto__ || Object.getPrototypeOf(RootComponent)).apply(this, arguments));
 	  }
 	
 	  _createClass(RootComponent, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      _reactScroll.Events.scrollEvent.register('begin', function (to, element) {
-	        console.log("begin", arguments);
-	      });
-	      _reactScroll.Events.scrollEvent.register('end', function (to, element) {
-	        console.log("end", arguments);
-	      });
-	      _reactScroll.scrollSpy.update();
-	    }
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      _reactScroll.Events.scrollEvent.remove('begin');
-	      _reactScroll.Events.scrollEvent.remove('end');
-	    }
-	  }, {
 	    key: 'render',
+	
+	    // constructor(props) {
+	    //   super(props);
+	    //   this.state = {
+	    //     mouseX: 0,
+	    //     mouseY: 0,
+	    //     currentY: 0
+	    //   }
+	    //   this.handleScroll = this.handleScroll.bind(this);
+	    // }
+	
+	    // componentDidMount() {
+	    //   window.addEventListener('scroll', this.handleScroll);
+	    // }
+	
+	    // componentWillUnmount() {
+	    //   window.removeEventListener('scroll', this.handleScroll);
+	    // }
+	
+	    // onMouseMove(e) {
+	    //   this.setState({
+	    //     mouseX: e.pageX,
+	    //     mouseY: e.pageY,
+	    //   })
+	    // }
+	
+	    // handleScroll() {
+	    //   console.log('handleScroll')
+	    //   this.setState({
+	    //     currentY: this.currentPositionY()
+	    //   })
+	    // }
+	
+	    // currentPositionY() {
+	    //   var supportPageOffset = window.pageXOffset !== undefined;
+	    //   var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+	    //   return supportPageOffset ? window.pageYOffset : isCSS1Compat ?
+	    //     document.documentElement.scrollTop : document.body.scrollTop;
+	    // }
+	
+	    // parallex(strength, options = false) {
+	    //   // options properties
+	    //   // {
+	    //   //   fixed: boolean,
+	    //   //   background: boolean
+	    //   // }
+	
+	    //   const { mouseX, mouseY, currentY } = this.state;
+	
+	    //   let html = document.documentElement,
+	    //     viewportHeight = options && options.fixed ? html.scrollHeight : html.clientHeight,
+	    //     viewportWidth = html.clientWidth;
+	
+	    //   let fixedPosition = options && options.fixed ? 0 : currentY;
+	
+	    //   let positionX = (strength / viewportWidth) * (mouseX - (viewportWidth / 2)) * -1,
+	    //     positionY = (strength / viewportHeight) * (mouseY - (viewportHeight / 2)) * -1 - fixedPosition;
+	
+	    //   console.log(viewportHeight, window.innerHeight, mouseY, currentY)
+	
+	    //   if (options && options.background) {
+	    //     return {
+	    //       backgroundPosition: `calc(${positionX}px - 3vw) calc(${positionY}px - 3vh)`
+	    //     }
+	    //   }
+	    //   return {
+	    //     transform: `matrix(1,0,0,1, ${positionX}, ${positionY})`
+	    //   }
+	    // }
+	
 	    value: function render() {
+	      // let newState = Object.assign({}, this.state);
+	      // newState.parallex = this.parallex.bind(this);
 	
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_components.Sidebar, null),
-	        _react2.default.createElement(_components.Navbar, null),
-	        this.props.children && _react2.default.cloneElement(this.props.children, this.props),
-	        _react2.default.createElement(_components.Footer, null)
+	        this.props.children && _react2.default.cloneElement(this.props.children)
 	      );
 	    }
 	  }]);
@@ -50198,9 +52100,47 @@
 	exports.default = (0, _reactRedux.connect)(mapState, mapDispatch)(RootComponent);
 
 /***/ },
-/* 558 */,
-/* 559 */,
-/* 560 */
+/* 572 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(573);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(575)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/index.js!./app.scss", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/index.js!./app.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 573 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(574)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "body {\n  height: 100%;\n  font-family: 'Roboto', sans-serif;\n  font-size: 16px;\n  color: white; }\n\nh1, h2, h3, h4, h5 {\n  font-family: 'Patua One', cursive; }\n\n@media only screen and (max-width: 375px) {\n  .hidden-sm {\n    display: none; } }\n\n@media only screen and (min-width: 376px) and (max-width: 1023px) {\n  .hidden-sm {\n    display: block; } }\n\n@media only screen and (min-width: 1024px) {\n  .hidden-sm {\n    display: block; } }\n\n@media only screen and (min-width: 376px) and (max-width: 1023px) {\n  .hidden-md {\n    display: none; } }\n\n@media only screen and (min-width: 1024px) {\n  .hidden-md {\n    display: block; } }\n\n@media only screen and (min-width: 1024px) {\n  .hidden-lg {\n    display: none; } }\n\n/* \n * Root component stylesheet\n * ==============================\n */\n/* color */\nh1, h2, h3, h4, h5, span, p {\n  color: #222222; }\n\n/* theme */\n.light-theme.container, .light-theme.container-fluid {\n  background-color: #ffffff; }\n\n.light-theme h1, .light-theme h2, .light-theme h3, .light-theme h4, .light-theme h5, .light-theme span, .light-theme p, .light-theme label {\n  color: #222222; }\n\n.dark-theme.container, .dark-theme.container-fluid {\n  background-color: #222222; }\n\n.dark-theme h1, .dark-theme h2, .dark-theme h3, .dark-theme h4, .dark-theme h5, .dark-theme span, .dark-theme p, .dark-theme label {\n  color: #ffffff; }\n\n.icon-wrapper {\n  width: 50%;\n  height: 100px;\n  color: white;\n  font-size: 30px; }\n\n#content-wrapper #main {\n  background-image: url(/images/background.png);\n  background-attachment: fixed;\n  background-position: -3vw -3vh;\n  background-repeat: no-repeat;\n  background-size: cover; }\n  @media only screen and (max-width: 375px) {\n    #content-wrapper #main {\n      background-size: cover;\n      background-position: top !important; } }\n  @media only screen and (min-width: 376px) and (max-width: 1023px) {\n    #content-wrapper #main {\n      background-size: cover;\n      background-position: top !important; } }\n  @media only screen and (min-width: 1024px) {\n    #content-wrapper #main {\n      background-size: 106vw auto; } }\n\n#content-wrapper #milo-wrapper {\n  position: fixed;\n  height: 100vh;\n  z-index: 200;\n  top: 25vh;\n  left: calc(50% - 30vh); }\n  #content-wrapper #milo-wrapper #milo {\n    background-image: url(/images/milo.png);\n    background-size: auto 100%;\n    height: 100vh;\n    width: 60vh;\n    background-position: center;\n    background-repeat: no-repeat; }\n\n#content-wrapper canvas {\n  opacity: 0.2; }\n\n.border {\n  position: fixed;\n  width: 100vw;\n  height: 100%;\n  z-index: 100; }\n  @media only screen and (max-width: 375px) {\n    .border {\n      opacity: 0; } }\n  @media only screen and (min-width: 376px) and (max-width: 1023px) {\n    .border {\n      opacity: 0; } }\n  @media only screen and (min-width: 1024px) {\n    .border {\n      opacity: 1; } }\n  .border .border-left, .border .border-right, .border .border-top, .border .border-bottom {\n    position: fixed;\n    background-color: #e2e2e2; }\n  .border .border-top, .border .border-bottom {\n    width: 90vw;\n    height: 20px; }\n  .border .border-top {\n    top: 5vh;\n    left: 5vw; }\n  .border .border-bottom {\n    bottom: 5vh;\n    left: 5vw;\n    text-align: right;\n    padding-right: 22px;\n    font-size: 0.8em; }\n  .border .border-left, .border .border-right {\n    width: 20px;\n    height: 90%; }\n  .border .border-left {\n    top: 5vh;\n    left: 5vw; }\n  .border .border-right {\n    top: 5vh;\n    right: 5vw; }\n\n* {\n  -webkit-backface-visibility: hidden;\n  -moz-backface-visibility: hidden;\n  -ms-backface-visibility: hidden;\n  -o-backface-visibility: hidden;\n  -webkit-transform-style: flat;\n  -moz-transform-style: flat;\n  -ms-transform-style: flat;\n  -o-transform-style: flat; }\n\n* {\n  -webkit-font-smoothing: antialiased;\n  -webkit-backface-visibility: hidden;\n  box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  -webkit-user-drag: none;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-overflow-scrolling: touch;\n  -webkit-touch-callout: none; }\n\n.parallax-container {\n  overflow: hidden;\n  height: 100vh;\n  width: 100vw;\n  position: absolute; }\n\n.parallax-section {\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center center;\n  background-color: white;\n  position: absolute;\n  transform-style: flat;\n  backface-visibility: hidden;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  color: white;\n  font-family: Helvetica;\n  width: 100%;\n  transform: matrix(1, 0, 0, 1, 0, 0); }\n  .parallax-section.current {\n    transform: translateY(0); }\n\n/* Set stacking context of slides */\n.parallax-section:nth-child(1) {\n  z-index: 100; }\n\n.parallax-section:nth-child(2) {\n  z-index: 200; }\n\n.parallax-section:nth-child(3) {\n  z-index: 300; }\n\n.parallax-section:nth-child(4) {\n  z-index: 400; }\n\n.content-wrapper {\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  text-align: center;\n  flex-flow: column nowrap;\n  color: #fff;\n  font-family: Montserrat;\n  text-transform: uppercase;\n  transform: translateY(40vh);\n  will-change: transform;\n  backface-visibility: hidden;\n  transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1); }\n\n.content-title {\n  font-size: 12vh;\n  line-height: 1.4; }\n\n.parallax-background {\n  position: relative;\n  overflow: hidden;\n  transform-style: preserve-3d;\n  backface-visibility: hidden;\n  width: 100%;\n  height: 100%;\n  pointer-events: none; }\n  .parallax-background .parallax-image {\n    transform: translate3d(-108px, 0px, 145px);\n    pointer-events: none;\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    background-size: cover;\n    background-repeat: no-repeat;\n    background-position: center center; }\n\n.depth-1 {\n  z-index: 1; }\n\n.depth-2 {\n  z-index: 2; }\n\n.depth-3 {\n  z-index: 3; }\n\n.depth-4 {\n  z-index: 4; }\n\n.depth-5 {\n  z-index: 5; }\n\n.depth-6 {\n  z-index: 6; }\n\n.depth-7 {\n  z-index: 7; }\n\n.depth-8 {\n  z-index: 8; }\n\n.depth-9 {\n  z-index: 9; }\n\n.depth-10 {\n  z-index: 10; }\n\n.depth-11 {\n  z-index: 11; }\n\n.depth-12 {\n  z-index: 12; }\n\n.depth-13 {\n  z-index: 13; }\n\n.depth-14 {\n  z-index: 14; }\n\n.depth-15 {\n  z-index: 15; }\n\n.depth-16 {\n  z-index: 16; }\n\n.depth-17 {\n  z-index: 17; }\n\n.depth-18 {\n  z-index: 18; }\n\n.depth-19 {\n  z-index: 19; }\n\n.depth-20 {\n  z-index: 20; }\n\n.depth-21 {\n  z-index: 21; }\n\n.depth-22 {\n  z-index: 22; }\n\n.depth-23 {\n  z-index: 23; }\n\n.depth-24 {\n  z-index: 24; }\n\n.depth-25 {\n  z-index: 25; }\n\n.depth-26 {\n  z-index: 26; }\n\n.depth-27 {\n  z-index: 27; }\n\n.depth-28 {\n  z-index: 28; }\n\n.depth-29 {\n  z-index: 29; }\n\n.depth-30 {\n  z-index: 30; }\n\n.depth-31 {\n  z-index: 31; }\n\n.depth-32 {\n  z-index: 32; }\n\n.depth-33 {\n  z-index: 33; }\n\n.depth-34 {\n  z-index: 34; }\n\n.depth-35 {\n  z-index: 35; }\n\n.depth-36 {\n  z-index: 36; }\n\n.depth-37 {\n  z-index: 37; }\n\n.depth-38 {\n  z-index: 38; }\n\n.depth-39 {\n  z-index: 39; }\n\n.depth-40 {\n  z-index: 40; }\n\n.depth-41 {\n  z-index: 41; }\n\n.depth-42 {\n  z-index: 42; }\n\n.depth-43 {\n  z-index: 43; }\n\n.depth-44 {\n  z-index: 44; }\n\n.depth-45 {\n  z-index: 45; }\n\n.depth-46 {\n  z-index: 46; }\n\n.depth-47 {\n  z-index: 47; }\n\n.depth-48 {\n  z-index: 48; }\n\n.depth-49 {\n  z-index: 49; }\n\n.depth-50 {\n  z-index: 50; }\n\n.depth-51 {\n  z-index: 51; }\n\n.depth-52 {\n  z-index: 52; }\n\n.depth-53 {\n  z-index: 53; }\n\n.depth-54 {\n  z-index: 54; }\n\n.depth-55 {\n  z-index: 55; }\n\n.depth-56 {\n  z-index: 56; }\n\n.depth-57 {\n  z-index: 57; }\n\n.depth-58 {\n  z-index: 58; }\n\n.depth-59 {\n  z-index: 59; }\n\n.depth-60 {\n  z-index: 60; }\n\n.depth-61 {\n  z-index: 61; }\n\n.depth-62 {\n  z-index: 62; }\n\n.depth-63 {\n  z-index: 63; }\n\n.depth-64 {\n  z-index: 64; }\n\n.depth-65 {\n  z-index: 65; }\n\n.depth-66 {\n  z-index: 66; }\n\n.depth-67 {\n  z-index: 67; }\n\n.depth-68 {\n  z-index: 68; }\n\n.depth-69 {\n  z-index: 69; }\n\n.depth-70 {\n  z-index: 70; }\n\n.depth-71 {\n  z-index: 71; }\n\n.depth-72 {\n  z-index: 72; }\n\n.depth-73 {\n  z-index: 73; }\n\n.depth-74 {\n  z-index: 74; }\n\n.depth-75 {\n  z-index: 75; }\n\n.depth-76 {\n  z-index: 76; }\n\n.depth-77 {\n  z-index: 77; }\n\n.depth-78 {\n  z-index: 78; }\n\n.depth-79 {\n  z-index: 79; }\n\n.depth-80 {\n  z-index: 80; }\n\n.depth-81 {\n  z-index: 81; }\n\n.depth-82 {\n  z-index: 82; }\n\n.depth-83 {\n  z-index: 83; }\n\n.depth-84 {\n  z-index: 84; }\n\n.depth-85 {\n  z-index: 85; }\n\n.depth-86 {\n  z-index: 86; }\n\n.depth-87 {\n  z-index: 87; }\n\n.depth-88 {\n  z-index: 88; }\n\n.depth-89 {\n  z-index: 89; }\n\n.depth-90 {\n  z-index: 90; }\n\n.depth-91 {\n  z-index: 91; }\n\n.depth-92 {\n  z-index: 92; }\n\n.depth-93 {\n  z-index: 93; }\n\n.depth-94 {\n  z-index: 94; }\n\n.depth-95 {\n  z-index: 95; }\n\n.depth-96 {\n  z-index: 96; }\n\n.depth-97 {\n  z-index: 97; }\n\n.depth-98 {\n  z-index: 98; }\n\n.depth-99 {\n  z-index: 99; }\n\n.depth-100 {\n  z-index: 100; }\n\n.parallax-content-wrapper {\n  position: absolute;\n  position: absolute;\n  transform-style: flat;\n  backface-visibility: hidden;\n  transform: translate3d(0px, 0px, 0px);\n  z-index: 999;\n  height: 100%; }\n  .parallax-content-wrapper > div {\n    position: relative;\n    background-color: rgba(0, 0, 0, 0.53);\n    height: 100%;\n    width: 100%; }\n  .parallax-content-wrapper .parallax-content {\n    position: absolute;\n    top: 0;\n    background-color: red;\n    color: white;\n    font-size: 40px; }\n\n.fixed-wrapper {\n  width: 50vw;\n  height: 100vh;\n  position: absolute;\n  overflow: hidden;\n  top: 0;\n  padding: 3%;\n  z-index: 9000; }\n\n.prev-btn {\n  bottom: 120px;\n  right: 20px; }\n\n.next-btn {\n  bottom: 80px;\n  right: 20px; }\n\n.smart-object {\n  position: absolute;\n  -webkit-backface-visibility: hidden;\n  -moz-backface-visibility: hidden;\n  -ms-backface-visibility: hidden;\n  -o-backface-visibility: hidden;\n  -webkit-transform-style: flat;\n  -moz-transform-style: flat;\n  -ms-transform-style: flat;\n  -o-transform-style: flat; }\n\n.smart-btn {\n  position: absolute;\n  color: white;\n  font-size: 24px;\n  width: 40px;\n  height: 40px;\n  text-align: center;\n  cursor: pointer;\n  z-index: 9999; }\n\n.menu-btn {\n  top: 0;\n  left: 0; }\n\n.rotate-right-btn {\n  top: calc(50% - 20px);\n  right: 0; }\n\n.rotate-left-btn {\n  top: calc(50% - 20px);\n  left: 0; }\n\n.fullHeight {\n  width: 100vw;\n  height: 100vh; }\n\n.content-info .heading, .content-detail .heading {\n  font-family: 'Patua One', cursive;\n  font-size: 33px;\n  line-height: 35.75px;\n  color: white;\n  margin-left: -2px;\n  padding-left: 2px;\n  opacity: 1; }\n\n.content-info .sub-heading, .content-detail .sub-heading {\n  font-family: 'Patua One', cursive;\n  line-height: 35.75px;\n  color: white;\n  margin-left: -2px;\n  padding-left: 2px;\n  opacity: 1; }\n\n.content-info .sub-heading-lg, .content-detail .sub-heading-lg {\n  font-size: 33px; }\n\n.content-info .sub-heading-sm, .content-detail .sub-heading-sm {\n  font-size: 20px; }\n\n.content-info .description, .content-detail .description {\n  margin-top: 30px;\n  font-size: 16px;\n  line-height: 24px;\n  color: white;\n  opacity: 1; }\n\n.content-info .text-lg, .content-detail .text-lg {\n  font-size: 20px; }\n\n.content-info .text-md, .content-detail .text-md {\n  font-size: 18px; }\n\n.content-info .section-row, .content-detail .section-row {\n  margin-top: 30px; }\n  .content-info .section-row > div > div, .content-detail .section-row > div > div {\n    margin-bottom: 5px; }\n\n.content-info .section-col, .content-detail .section-col {\n  margin-bottom: 30px; }\n\n.content-info .technology .tech-tag, .content-detail .technology .tech-tag {\n  float: left;\n  width: auto;\n  padding: 5px 8px;\n  border-radius: 15px;\n  font-size: 13px;\n  background-color: #DDD;\n  color: #4c4c4c;\n  margin: 5px; }\n\n.content-info {\n  transform-style: flat;\n  bottom: 70px;\n  right: 0px;\n  width: auto;\n  max-width: 400px;\n  height: auto;\n  min-height: 229px;\n  margin: 0px 40px;\n  cursor: pointer; }\n\n.content-detail {\n  padding: 100px 2%; }\n  .content-detail .info {\n    padding: 0 2%; }\n\n.top-grad {\n  top: 0;\n  width: 100%;\n  height: 100px;\n  background: -webkit-linear-gradient(bottom, rgba(255, 0, 0, 0), #121a18);\n  /* For Safari 5.1 to 6.0 */\n  background: -o-linear-gradient(top, rgba(255, 0, 0, 0), #121a18);\n  /* For Opera 11.1 to 12.0 */\n  background: -moz-linear-gradient(top, rgba(255, 0, 0, 0), #121a18);\n  /* For Firefox 3.6 to 15 */\n  background: linear-gradient(to top, rgba(255, 0, 0, 0), #121a18);\n  /* Standard syntax (must be last) */ }\n\n.bottom-grad {\n  bottom: 0;\n  width: 100%;\n  height: 100px;\n  background: -webkit-linear-gradient(top, rgba(255, 0, 0, 0), #121a18);\n  /* For Safari 5.1 to 6.0 */\n  background: -o-linear-gradient(bottom, rgba(255, 0, 0, 0), #121a18);\n  /* For Opera 11.1 to 12.0 */\n  background: -moz-linear-gradient(bottom, rgba(255, 0, 0, 0), #121a18);\n  /* For Firefox 3.6 to 15 */\n  background: linear-gradient(to bottom, rgba(255, 0, 0, 0), #121a18);\n  /* Standard syntax (must be last) */ }\n\n.beer__container {\n  position: relative;\n  max-width: 960px;\n  margin: 0 auto;\n  padding: 4em 2em;\n  z-index: 2; }\n  .beer__container .beer__kitchen {\n    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173991/in-the-kitchen.png);\n    background-size: 100% auto;\n    background-position: top center;\n    background-repeat: no-repeat;\n    width: 100%;\n    max-width: 480px;\n    height: 3em; }\n\n@-webkit-keyframes bubbles {\n  0% {\n    visibility: visible;\n    transform: scale(0);\n    top: 100%; }\n  15% {\n    transform: scale(1);\n    top: 100%; }\n  100% {\n    top: -100%;\n    transform: translateY(-10%); } }\n\n.beer {\n  position: relative;\n  height: 400px;\n  overflow: hidden;\n  background: #c05600;\n  /* Old browsers */\n  background: -moz-linear-gradient(left, #c05600 0%, #dc7000 21%, #e87c00 51%, #e87c00 81%, #dc7000 100%);\n  /* FF3.6+ */\n  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #c05600), color-stop(21%, #dc7000), color-stop(51%, #e87c00), color-stop(81%, #e87c00), color-stop(100%, #dc7000));\n  /* Chrome,Safari4+ */\n  background: -webkit-linear-gradient(left, #c05600 0%, #dc7000 21%, #e87c00 51%, #e87c00 81%, #dc7000 100%);\n  /* Chrome10+,Safari5.1+ */\n  background: -o-linear-gradient(left, #c05600 0%, #dc7000 21%, #e87c00 51%, #e87c00 81%, #dc7000 100%);\n  /* Opera 11.10+ */\n  background: -ms-linear-gradient(left, #c05600 0%, #dc7000 21%, #e87c00 51%, #e87c00 81%, #dc7000 100%);\n  /* IE10+ */\n  background: linear-gradient(to right, #c05600 0%, #dc7000 21%, #e87c00 51%, #e87c00 81%, #dc7000 100%);\n  /* W3C */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c05600', endColorstr='#dc7000',GradientType=1 );\n  /* IE6-9 */ }\n\n.bubble {\n  position: absolute;\n  background-color: transparent;\n  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173991/bubble.png);\n  background-size: cover;\n  background-position: center center;\n  border-radius: 100%;\n  opacity: 0.5;\n  visibility: hidden;\n  -webkit-filter: blur(1px);\n  -moz-filter: blur(1px);\n  -o-filter: blur(1px);\n  -ms-filter: blur(1px);\n  filter: blur(1px);\n  -webkit-animation: bubbles 7s infinite;\n  -moz-animation: bubbles 7s infinite;\n  -o-animation: bubbles 7s infinite;\n  animation: bubbles 7s infinite;\n  z-index: 1; }\n\n.link-btn {\n  color: white;\n  margin: 20px 20px 20px 0px;\n  text-decoration: none;\n  border: 1px solid;\n  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);\n  outline-color: rgba(255, 255, 255, 0.5);\n  outline-offset: 0px;\n  text-shadow: none;\n  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1); }\n\n.link-btn:hover {\n  border: 1px solid;\n  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);\n  outline-color: rgba(255, 255, 255, 0);\n  outline-offset: 15px;\n  text-shadow: 1px 1px 2px #427388; }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 574 */
 /***/ function(module, exports) {
 
 	/*
@@ -50256,7 +52196,7 @@
 
 
 /***/ },
-/* 561 */
+/* 575 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -50508,56 +52448,994 @@
 
 
 /***/ },
-/* 562 */,
-/* 563 */,
-/* 564 */,
-/* 565 */,
-/* 566 */,
-/* 567 */,
-/* 568 */,
-/* 569 */,
-/* 570 */,
-/* 571 */,
-/* 572 */,
-/* 573 */,
-/* 574 */
+/* 576 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
+	'use strict';
 	
-	// load the styles
-	var content = __webpack_require__(575);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(561)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/index.js!./app.scss", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/index.js!./app.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Container = __webpack_require__(577);
+	
+	var _Container2 = _interopRequireDefault(_Container);
+	
+	var _Side = __webpack_require__(578);
+	
+	var _Side2 = _interopRequireDefault(_Side);
+	
+	var _Nav = __webpack_require__(579);
+	
+	var _Nav2 = _interopRequireDefault(_Nav);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  Container: _Container2.default,
+	  Side: _Side2.default,
+	  Nav: _Nav2.default
+	};
 
 /***/ },
-/* 575 */
+/* 577 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(560)();
-	// imports
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(32);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var propTypes = {
+		menuBtn: _react2.default.PropTypes.element,
+		rotateLeftBtn: _react2.default.PropTypes.element,
+		rotateRightBtn: _react2.default.PropTypes.element,
+		x: _react2.default.PropTypes.number,
+		y: _react2.default.PropTypes.number,
+		z: _react2.default.PropTypes.number
+	};
+	
+	var defaultProps = {
+		x: 100,
+		y: 1000,
+		z: 700
+	};
+	
+	var CubeContainer = function (_React$Component) {
+		_inherits(CubeContainer, _React$Component);
+	
+		function CubeContainer(props) {
+			_classCallCheck(this, CubeContainer);
+	
+			var _this = _possibleConstructorReturn(this, (CubeContainer.__proto__ || Object.getPrototypeOf(CubeContainer)).call(this, props));
+	
+			_this.state = {
+				currentSide: 'front', // 'front', 'left', 'right'
+				toggleMenu: false
+			};
+			return _this;
+		}
+	
+		_createClass(CubeContainer, [{
+			key: 'getBoxSize',
+			value: function getBoxSize() {
+				var element = _reactDom2.default.findDOMNode(this);
+			}
+		}, {
+			key: 'onSideChange',
+			value: function onSideChange(side) {
+				// console.log('onSideChange', this.state.currentSide, side, this.props.setScroll)
+				if (side === 'front' && this.props.setScroll) this.props.setScroll(false);
+				if (side === 'right' && this.props.setScroll) this.props.setScroll(true);
+			}
+		}, {
+			key: 'componentWillUpdate',
+			value: function componentWillUpdate(nextProps, nextState) {
+				if (this.state.currentSide !== nextState.currentSide) this.onSideChange(nextState.currentSide);
+			}
+		}, {
+			key: 'rotate',
+			value: function rotate(direction) {
+				var container = _reactDom2.default.findDOMNode(this);
+				var element = _reactDom2.default.findDOMNode(this).childNodes[0];
+				// console.log(element.style);
+	
+				var newState = Object.assign({}, this.state);
+	
+				var _props = this.props,
+				    x = _props.x,
+				    y = _props.y,
+				    z = _props.z;
+	
+				if (direction === "left") {
+					// container.style.width = `${z}px`;
+					// container.style.transform = `matrix(1,0,0,1,${z / 2},0)`;
+					element.style.transform = 'translate3d(0, 0, ' + -(z / 2) + 'px) rotateY( 90deg )';
+					this.setSide('left');
+				} else if (direction === "right") {
+					// container.style.width = `${z}px`;
+					// container.style.transform = `matrix(1,0,0,1,${-(z / 2)},0)`;
+					element.style.transform = 'translate3d(0, 0, ' + -(x - z / 2) + 'px) rotateY( -90deg )';
+					this.setSide('right');
+				} else if (direction === "menu") {
+					// container.style.width = `${z}px`;
+					// container.style.transform = `matrix(1,0,0,1,0,0)`;
+					element.style.transform = 'translate3d(0, 0, ' + -x + 'px) rotateY( 90deg )';
+					this.setSide('left');
+				} else {
+					// container.style.width = `${x}px`;
+					// container.style.transform = `matrix(1,0,0,1,0,0)`;
+					element.style.transform = 'translate3d(0px, 0px, 0px) rotateY(0deg)';
+					this.setSide('front');
+				}
+				this.setState({
+					currentSide: direction === 'menu' ? 'left' : direction,
+					toggleMenu: direction === 'menu' ? true : false
+				});
+				this.onSideChange();
+			}
+		}, {
+			key: 'setSide',
+			value: function setSide(newSide) {
+				this.setState({ currentSide: newSide });
+				this.onSideChange();
+			}
+		}, {
+			key: 'renderCube',
+			value: function renderCube(children) {
+				var _this2 = this;
+	
+				var _props2 = this.props,
+				    x = _props2.x,
+				    y = _props2.y,
+				    z = _props2.z;
 	
 	
-	// module
-	exports.push([module.id, "/* \n * Root component stylesheet\n * ==============================\n */\n/* color */\nh1, h2, h3, h4, h5, span, p {\n  color: #222222; }\n\n/* theme */\n.light-theme.container, .light-theme.container-fluid {\n  background-color: #ffffff; }\n\n.light-theme h1, .light-theme h2, .light-theme h3, .light-theme h4, .light-theme h5, .light-theme span, .light-theme p, .light-theme label {\n  color: #222222; }\n\n.dark-theme.container, .dark-theme.container-fluid {\n  background-color: #222222; }\n\n.dark-theme h1, .dark-theme h2, .dark-theme h3, .dark-theme h4, .dark-theme h5, .dark-theme span, .dark-theme p, .dark-theme label {\n  color: #ffffff; }\n\n.fullHeight {\n  height: 100vh;\n  padding-top: 50px; }\n\n#navbar {\n  padding: 0 30% 0 30%;\n  width: 100%;\n  height: 50px;\n  display: table;\n  position: fixed; }\n  #navbar .btn {\n    display: table-cell;\n    vertical-align: middle; }\n\n#sidebar {\n  position: fixed;\n  height: 100vh;\n  z-index: 1000; }\n\n.menu {\n  width: 500px;\n  height: 100%;\n  background-color: #222222;\n  display: flex;\n  padding: 20px 20px 20px 120px;\n  justify-content: space-between;\n  flex-direction: column;\n  align-items: flex-start;\n  color: white; }\n  .menu.open {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0); }\n  .menu:after {\n    display: none; }\n  .menu > div {\n    width: 100%; }\n  .menu ul {\n    font-size: 40px;\n    margin: 0;\n    padding: 0; }\n\nli {\n  list-style: none; }\n\n/* Effect 4: Slide along */\n.menu {\n  opacity: 0;\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n  -webkit-transform: translate3d(-100%, 0, 0);\n  transform: translate3d(-100%, 0, 0); }\n\n#btn-menu {\n  cursor: pointer;\n  width: 50px;\n  height: 44px;\n  position: fixed;\n  z-index: 14;\n  top: 64px;\n  left: 24px;\n  -webkit-transition: all 0.3s ease-in-out;\n  -moz-transition: all 0.3s ease-in-out;\n  -ms-transition: all 0.3s ease-in-out;\n  -o-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out; }\n\n#btn-menu .top,\n#btn-menu .middle,\n#btn-menu .bottom {\n  display: block;\n  width: 50px;\n  height: 6px;\n  background: #e5e5e5;\n  position: absolute;\n  left: 0px;\n  -webkit-transition: all 0.3s ease-in-out;\n  -moz-transition: all 0.3s ease-in-out;\n  -ms-transition: all 0.3s ease-in-out;\n  -o-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n  -moz-opacity: 1;\n  -khtml-opacity: 1;\n  -webkit-opacity: 1;\n  opacity: 1;\n  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);\n  filter: alpha(opacity=100); }\n\n#btn-menu .top {\n  top: 0px; }\n\n#btn-menu .middle {\n  top: 12px; }\n\n#btn-menu .bottom {\n  top: 24px; }\n\n#btn-menu.top {\n  top: 20px; }\n\n#btn-menu.open {\n  top: calc(50vh - 22px); }\n\n#btn-menu.open .middle {\n  -moz-opacity: 0;\n  -khtml-opacity: 0;\n  -webkit-opacity: 0;\n  opacity: 0;\n  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);\n  filter: alpha(opacity=0); }\n\n#btn-menu.open:hover span {\n  background: #b46357; }\n\n#btn-menu.open .top {\n  top: 20px !important;\n  -moz-transform: scale(1) rotate(45deg) !important;\n  -webkit-transform: scale(1) rotate(45deg) !important;\n  -o-transform: scale(1) rotate(45deg) !important;\n  -ms-transform: scale(1) rotate(45deg) !important;\n  transform: scale(1) rotate(45deg) !important; }\n\n#btn-menu.open .bottom {\n  top: 20px !important;\n  -moz-transform: scale(1) rotate(-45deg) !important;\n  -webkit-transform: scale(1) rotate(-45deg) !important;\n  -o-transform: scale(1) rotate(-45deg) !important;\n  -ms-transform: scale(1) rotate(-45deg) !important;\n  transform: scale(1) rotate(-45deg) !important; }\n\n.border-top,\n.border-bottom,\n.border-left,\n.border-right {\n  position: absolute;\n  background: #e5e5e5;\n  z-index: 10; }\n\n.border-top,\n.border-bottom {\n  height: 24px;\n  left: 20px;\n  right: 20px; }\n\n.border-left,\n.border-right {\n  width: 24px;\n  top: 20px;\n  bottom: 20px; }\n\n.border-top {\n  top: 20px; }\n\n.border-bottom {\n  bottom: 20px; }\n\n.border-left {\n  left: 20px; }\n\n.border-right {\n  right: 20px; }\n\n#btn-menu:hover .top {\n  top: 13px;\n  -moz-transform: scale(1) rotate(90deg);\n  -webkit-transform: scale(1) rotate(90deg);\n  -o-transform: scale(1) rotate(90deg);\n  -ms-transform: scale(1) rotate(90deg);\n  transform: scale(1) rotate(90deg); }\n\n#btn-menu:hover .bottom {\n  top: 13px;\n  -moz-transform: scale(1) rotate(-90deg);\n  -webkit-transform: scale(1) rotate(-90deg);\n  -o-transform: scale(1) rotate(-90deg);\n  -ms-transform: scale(1) rotate(-90deg);\n  transform: scale(1) rotate(-90deg); }\n\n#scrollToTop {\n  position: fixed;\n  bottom: 0px;\n  right: 0px; }\n", ""]);
+				var elementStyle = {
+					width: '100%',
+					height: '100%',
+					position: 'relative',
+					transformStyle: 'preserve-3d',
+					transition: 'all 1s',
+					transform: 'rotateY(0deg)'
+				};
 	
-	// exports
+				var elementProps = Object.assign({
+					style: elementStyle
+				}, children.props);
+	
+				var elementChildren = _react2.default.Children.map(children, function (child, index) {
+	
+					var childProps = Object.assign({
+						rotate: _this2.rotate.bind(_this2)
+					}, child.props);
+	
+					if (child.type.name === "CubeSide") {
+						childProps.x = x;
+						childProps.y = y;
+						childProps.z = z;
+						childProps.currentSide = _this2.state.currentSide;
+					}
+					// console.log('renderCube', child, childProps)
+					return _react2.default.cloneElement(child, childProps, child.props.children);
+				});
+	
+				return _react2.default.createElement('div', elementProps, elementChildren);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var _props3 = this.props,
+				    x = _props3.x,
+				    y = _props3.y,
+				    z = _props3.z;
+	
+	
+				var elementStyle = {
+					width: this.state.currentSide === "front" ? x : z,
+					height: y !== 0 ? y : 'calc(100vh - 40px)',
+					position: 'relative',
+					perspective: z !== 0 ? z : 'calc(100vw - 40px)',
+					transition: 'all 1s',
+					pointerEvents: 'all'
+				};
+	
+				if (this.state.currentSide === "front" || this.state.toggleMenu) elementStyle.transform = 'matrix(1,0,0,1,0,0)';
+				if (this.state.currentSide === "left" && !this.state.toggleMenu) elementStyle.transform = 'matrix(1,0,0,1,' + z / 2 + ',0)';
+				if (this.state.currentSide === "right" && !this.state.toggleMenu) elementStyle.transform = 'matrix(1,0,0,1,' + -(z / 2) + ',0)';
+	
+				var elementProps = Object.assign({ style: elementStyle }, this.props);
+				// console.log(elementProps)
+				delete elementProps.setScroll;
+	
+				return _react2.default.createElement('div', elementProps, this.renderCube(this.props.children));
+				// return (
+				// 	<div {...elementProps}>
+				// 		{this.renderCube(this.props.children)}
+				// 	</div>
+				// 	)
+			}
+		}]);
+	
+		return CubeContainer;
+	}(_react2.default.Component);
+	
+	CubeContainer.propTypes = propTypes;
+	CubeContainer.defaultProps = defaultProps;
+	exports.default = CubeContainer;
 
+/***/ },
+/* 578 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(32);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _index = __webpack_require__(576);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var propTypes = {
+		side: _react2.default.PropTypes.string,
+		backgroundColor: _react2.default.PropTypes.string,
+		x: _react2.default.PropTypes.number,
+		y: _react2.default.PropTypes.number,
+		z: _react2.default.PropTypes.number,
+		currentSide: _react2.default.PropTypes.string,
+		overflow: _react2.default.PropTypes.string,
+		rgba: _react2.default.PropTypes.object
+	
+	};
+	
+	var defaultProps = {
+		side: '',
+		currentSide: 'front',
+		overflow: 'hidden',
+		backgroundColor: 'rgba(41, 41, 41, 0.5)',
+		x: 100,
+		y: 1000,
+		z: 700,
+		rgba: {
+			r: 0,
+			g: 0,
+			b: 0,
+			a: 0.5
+		}
+	};
+	
+	var CubeSide = function (_React$Component) {
+		_inherits(CubeSide, _React$Component);
+	
+		function CubeSide(props) {
+			_classCallCheck(this, CubeSide);
+	
+			return _possibleConstructorReturn(this, (CubeSide.__proto__ || Object.getPrototypeOf(CubeSide)).call(this, props));
+		}
+	
+		_createClass(CubeSide, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				this.applyColor();
+			}
+		}, {
+			key: 'applyColor',
+			value: function applyColor() {
+				var element = _reactDom2.default.findDOMNode(this);
+				// console.log('CubeSide apply color', element, element.style);
+			}
+		}, {
+			key: 'getDimensions',
+			value: function getDimensions() {
+				var _props = this.props,
+				    x = _props.x,
+				    y = _props.y,
+				    z = _props.z,
+				    side = _props.side;
+	
+				var width = 0,
+				    height = 0,
+				    transform = 'translate3d(0px, 0px, 0px) rotateY( 0deg )';
+	
+				if (side === "front" || side === "back") {
+					width = x;
+					height = y;
+					transform = 'translate3d(0px, 0px, ' + (side === "front" ? 0 : -z) + 'px) rotateY( ' + (side === "front" ? 0 : 180) + 'deg )';
+				} else if (side === "right" || side === "left") {
+					width = z;
+					height = y;
+					transform = 'translate3d(' + (side === "right" ? x - z / 2 : -(z / 2)) + 'px, 0px, ' + -(z / 2) + 'px) rotateY( ' + (side === "right" ? 90 : -90) + 'deg )';
+				} else if (side === "top" || side === "bottom") {
+					width = x;
+					height = z;
+					transform = 'translate3d(0px, ' + (side === "top" ? -(z / 2) : y - z / 2) + 'px, ' + -(z / 2) + 'px) rotateX( ' + (side === "top" ? -90 : 90) + 'deg )';
+				}
+				return { width: width, height: height, transform: transform };
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var _props2 = this.props,
+				    side = _props2.side,
+				    currentSide = _props2.currentSide,
+				    rotate = _props2.rotate,
+				    rgba = _props2.rgba;
+	
+				var dimensions = this.getDimensions();
+	
+				var defaultStyle = {
+					margin: 0,
+					transition: 'all 1s',
+					display: 'block',
+					position: 'absolute',
+					zIndex: 100,
+					backgroundColor: 'rgba(' + rgba.r + ', ' + rgba.g + ', ' + rgba.b + ', ' + (side !== currentSide ? 0 : rgba.a) + ')'
+				};
+	
+				var elementStyle = Object.assign({
+					width: dimensions.width + 'px',
+					height: dimensions.height + 'px',
+					transform: dimensions.transform
+				}, defaultStyle);
+	
+				var childWrapperStyle = {
+					position: 'relative',
+					width: '100%',
+					height: '100%',
+					overflow: this.props.overflow
+				};
+	
+				var children = _react2.default.Children.map(this.props.children, function (child) {
+					// console.log(child);
+					if (typeof child !== 'string') {
+						var childElement = _react2.default.cloneElement(child, Object.assign({ rotate: rotate }, child.props), child.props.children);
+						return _react2.default.createElement(
+							'div',
+							{ style: childWrapperStyle },
+							side !== "front" ? _react2.default.createElement(_index2.default.Nav, { rotate: rotate, close: true }) : null
+							// : <Cube.Nav rotate={rotate} />
+							,
+							_react2.default.createElement(
+								'div',
+								{ style: childWrapperStyle },
+								childElement
+							)
+						);
+					}
+				});
+	
+				// console.log(children)
+				// let elementProps = Object.assign({style:elementStyle}, this.props);
+	
+				return _react2.default.createElement('div', { style: elementStyle }, children);
+			}
+		}]);
+	
+		return CubeSide;
+	}(_react2.default.Component);
+	
+	CubeSide.propTypes = propTypes;
+	CubeSide.defaultProps = defaultProps;
+	
+	exports.default = CubeSide;
+
+/***/ },
+/* 579 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// import ReactDOM from 'react-dom';
+	
+	var propTypes = {
+		close: _react2.default.PropTypes.bool
+	};
+	
+	var defaultProps = {
+		close: false
+	};
+	
+	var CubeNav = function (_React$Component) {
+		_inherits(CubeNav, _React$Component);
+	
+		function CubeNav(props) {
+			_classCallCheck(this, CubeNav);
+	
+			return _possibleConstructorReturn(this, (CubeNav.__proto__ || Object.getPrototypeOf(CubeNav)).call(this, props));
+		}
+	
+		_createClass(CubeNav, [{
+			key: 'render',
+			value: function render() {
+				var _props = this.props,
+				    rotate = _props.rotate,
+				    close = _props.close;
+	
+				if (close) {
+					return _react2.default.createElement(
+						'div',
+						null,
+						_react2.default.createElement(
+							'div',
+							{ className: 'smart-btn close-btn', style: { right: 0 }, onClick: function onClick() {
+									rotate('front');
+								} },
+							_react2.default.createElement('i', { className: 'fa fa-times' })
+						)
+					);
+				} else {
+					return _react2.default.createElement(
+						'div',
+						null,
+						_react2.default.createElement(
+							'div',
+							{ className: 'smart-btn menu-btn', onClick: function onClick() {
+									rotate('menu');
+								} },
+							_react2.default.createElement('i', { className: 'fa fa-bars' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'smart-btn rotate-right-btn', onClick: function onClick() {
+									rotate('right');
+								} },
+							_react2.default.createElement('i', { className: 'fa fa-angle-right' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'smart-btn rotate-left-btn', onClick: function onClick() {
+									rotate('left');
+								} },
+							_react2.default.createElement('i', { className: 'fa fa-angle-left' })
+						)
+					);
+				}
+			}
+		}]);
+	
+		return CubeNav;
+	}(_react2.default.Component);
+	
+	CubeNav.propTypes = propTypes;
+	CubeNav.defaultProps = defaultProps;
+	
+	exports.default = CubeNav;
+
+/***/ },
+/* 580 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactBootstrap = __webpack_require__(274);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var About = function (_React$Component) {
+	  _inherits(About, _React$Component);
+	
+	  function About(props) {
+	    _classCallCheck(this, About);
+	
+	    return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).call(this, props));
+	  }
+	
+	  _createClass(About, [{
+	    key: 'render',
+	    value: function render() {
+	
+	      var highlightColor = {
+	        color: '#00ffae'
+	      };
+	      return _react2.default.createElement(
+	        _reactBootstrap.Grid,
+	        { fluid: true },
+	        _react2.default.createElement(
+	          _reactBootstrap.Row,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 12, lg: 6, className: 'section-col' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'heading' },
+	              'Skills'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'sub-heading-sm' },
+	              _react2.default.createElement(
+	                'span',
+	                { style: highlightColor },
+	                'A list of abilities I\u2019m proud to have learned'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Grid,
+	              { fluid: true },
+	              _react2.default.createElement(
+	                _reactBootstrap.Row,
+	                { className: 'section-row' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { xs: 6 },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-lg', style: highlightColor },
+	                    _react2.default.createElement(
+	                      'strong',
+	                      null,
+	                      'Coding'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'HTML/CSS'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Javascript'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'PHP'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'MySQL/Postgres'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { xs: 6 },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-lg', style: highlightColor },
+	                    _react2.default.createElement(
+	                      'strong',
+	                      null,
+	                      'Design'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Web Design'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Mobile/Web App'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'UI/UX'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Branding & Print'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Row,
+	                { className: 'section-row' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { xs: 12 },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-lg', style: highlightColor },
+	                    _react2.default.createElement(
+	                      'strong',
+	                      null,
+	                      'Tools & Frameworks'
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { xs: 6 },
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Node.js'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Express.js'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'React.js'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Redux'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Angular1.5'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Laravel'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Mocha/Chai'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'D3.js'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { xs: 6 },
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Photoshop'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Illustrator'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Bootstrap'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Materialize'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 12, lg: 6, className: 'section-col' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'heading' },
+	              'Experience'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'sub-heading-sm' },
+	              _react2.default.createElement(
+	                'span',
+	                { style: highlightColor },
+	                'Here\'s where I\'ve been'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Grid,
+	              { fluid: true },
+	              _react2.default.createElement(
+	                _reactBootstrap.Row,
+	                { className: 'section-row' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { xs: 12 },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-lg', style: highlightColor },
+	                    _react2.default.createElement(
+	                      'strong',
+	                      null,
+	                      'Wholesale24x7.com'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-md' },
+	                    'March 2015 - October 2015'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { xs: 12 },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-md', style: highlightColor },
+	                    'Web Developer'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Created an user-friendly custom back-end admin platform for existing e-commerce built on zen-cart. The primary goal was to increase work efficiency by providing electronic invoicing method for purchase orders and visualizing the sales reports. Automated email, bulk actions, data visualization, drag and drop file upload features were included in the project, which allowed the business to easily monitor inventory transactions and focuses more on marketing and sales, while spending less time on daily operation tasks.'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Row,
+	                { className: 'section-row' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { xs: 12 },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-lg', style: highlightColor },
+	                    _react2.default.createElement(
+	                      'strong',
+	                      null,
+	                      'Wholesale24x7.com'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-md' },
+	                    'January 2012 - October 2015'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { xs: 12 },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-md', style: highlightColor },
+	                    'Marketing Manager'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Successfully conducted AdWord, email, social media, seasonal promotion marketing campaigns, which led to increase in the number of customers and sale. Also directed the operation of graphic designers to create various marketing contents and over 40,000 stock images of products.'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Row,
+	                { className: 'section-row' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { xs: 12 },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-lg', style: highlightColor },
+	                    _react2.default.createElement(
+	                      'strong',
+	                      null,
+	                      'Freelance'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-md' },
+	                    'February 2012 - Present'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { xs: 12 },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-md', style: highlightColor },
+	                    'Photographer & Retoucher'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Supported fashion accessories importing/wholesale distributors to set up in-house photo studio and produced stock images for their e-commerce site and marketing contents. Also educated in-house graphic designers to corresponding tasks as well.'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Row,
+	                { className: 'section-row' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { xs: 12 },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-lg', style: highlightColor },
+	                    _react2.default.createElement(
+	                      'strong',
+	                      null,
+	                      'EC Soft'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-md' },
+	                    'June 2008 - March 2009'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { xs: 12 },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-md', style: highlightColor },
+	                    'Web Designer'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'Created and customized web design templates and contents. The team successfully launched 3~4 websites per month(informative website for academies, e-commerce). Provided animation shockwave files for main content to attract the visitors, which was trends at the time.'
+	                  )
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              null,
+	              _react2.default.createElement('div', null)
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return About;
+	}(_react2.default.Component);
+	
+	exports.default = About;
+
+/***/ },
+/* 581 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var classNames = __webpack_require__(559);
+	var propTypes = {};
+	
+	var defaultProps = {};
+	
+	var ParallaxNav = function (_React$Component) {
+	  _inherits(ParallaxNav, _React$Component);
+	
+	  function ParallaxNav(props) {
+	    _classCallCheck(this, ParallaxNav);
+	
+	    return _possibleConstructorReturn(this, (ParallaxNav.__proto__ || Object.getPrototypeOf(ParallaxNav)).call(this, props));
+	  }
+	
+	  _createClass(ParallaxNav, [{
+	    key: 'render',
+	    value: function render() {
+	      // let children = 
+	      var setCurrent = this.props.setCurrent;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'smart-btn prev-btn', onClick: function onClick() {
+	              setCurrent('down');
+	            } },
+	          _react2.default.createElement('i', { className: 'fa fa-chevron-circle-up' })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'smart-btn next-btn', onClick: function onClick() {
+	              setCurrent('up');
+	            } },
+	          _react2.default.createElement('i', { className: 'fa fa-chevron-circle-down' })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return ParallaxNav;
+	}(_react2.default.Component);
+	
+	ParallaxNav.propTypes = propTypes;
+	ParallaxNav.defaultProps = defaultProps;
+	
+	exports.default = ParallaxNav;
 
 /***/ }
 /******/ ]);
