@@ -13,7 +13,8 @@
     "build-watch": "webpack -w",
     "start": "nodemon --watch server -e js,html server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",    
-    "postinstall": "webpack"
+    "db-init": "./db-init.sh",
+    "postinstall": "npm run db-init && webpack"
   },
   "license": "ISC",
   "dependencies": {
