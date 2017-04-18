@@ -42,7 +42,7 @@ $slide-number: 4;
   background-repeat: no-repeat;
   background-position: center center; 
   background-color: white;
-
+  transition: none;
   position: absolute;
   transform-style: flat;
   backface-visibility: hidden;  
@@ -52,118 +52,17 @@ $slide-number: 4;
   color: rgb(255, 255, 255);  
   font-family: Helvetica;
   width: 100%;
-  transform: matrix(1, 0, 0, 1, 0, 0);
-
-  &.current {
-  	transform: translateY(0);
-  }
+  transform: matrix(1, 0, 0, 1, 0, 0);  
 }
 
-/* Set stacking context of slides */
-@for $i from 1 to ($slide-number + 1) {
-    .parallax-section:nth-child(#{$i}) {
-        z-index: $i * 100; 
-    }
-}
+// /* Set stacking context of slides */
+// @for $i from 1 to ($slide-number + 1) {
+//     .parallax-section:nth-child(#{$i}) {
+//         z-index: $i * 100; 
+//     }
+// }
 
-
-.content {
-  &-wrapper {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-flow: column nowrap;
-  color: #fff;
-  font-family: Montserrat;
-  text-transform: uppercase;
-  transform: translateY($content-offset);
-  will-change: transform;
-  backface-visibility: hidden;
-  @include transition($transition-speed + .5, all, cubic-bezier(0.22, 0.44, 0, 1));
-  }
-  &-title {
-    font-size: 12vh;
-    line-height: 1.4;
-  }
-}
-
-.parallax-background {	
-	position: relative;
-	overflow: hidden;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-
-	.parallax-image {
-		transform: translate3d(-108px, 0px, 145px);
-    pointer-events: none;    
-		width: 100%;
-  	height: 100%;
-		// top: -3vh;
-		// left: -3vw;
-		position: absolute;
-		background-size: cover;
-  	background-repeat: no-repeat;
-  	background-position: center center; 
-	}
-}
-
-$class-slug: depth !default;
-
-@for $i from 1 through 100 {
-  .#{$class-slug}-#{$i} {
-    z-index: $i
-  }
-}
-
-.parallax-content-wrapper {
-	// width: 50vw;
- //  height: 100vh;
-  position: absolute;
-  // overflow: hidden;
-  // top: 0;
-  // padding: 3%;
-  // z-index: 500;
-
-  position: absolute; 
-  transform-style: flat; 
-  backface-visibility: hidden; 
-  transform: translate3d(0px, 0px, 0px); 
-  z-index: 999; 
-  height: 100%;
-
-  >div{
-  	position: relative;
-    background-color: rgba(0, 0, 0, 0.53);
-    height: 100%;
-    width: 100%;
-  }
-  .parallax-content {
-  	// for test  	
-    position: absolute;
-    top: 0;
-  	background-color: red;
-    color: white;
-    font-size: 40px;
-  }
-}
-
-.fixed-wrapper {
-	width: 50vw;
-  height: 100vh;
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  padding: 3%;
-  z-index: 9000;
-}
-
-
-
-
+// Prallax.Nav
 .prev-btn {  
   bottom: 120px;
   right: 20px;

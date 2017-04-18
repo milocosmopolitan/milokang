@@ -1,5 +1,5 @@
-import Container from './Container';
-import Detail from './Detail';
+import Container from './content.container';
+import Detail from './content.detail';
 export default {
   Container: Container,
   Detail: Detail
