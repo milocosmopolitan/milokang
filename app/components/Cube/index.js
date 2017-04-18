@@ -1,6 +1,6 @@
-import Container from './Container';
-import Side from './Side';
-import Nav from './Nav';
+import Container from './cube.container';
+import Side from './cube.side';
+import Nav from './cube.nav';
 export default {
   Container: Container,
   Side: Side,

@@ -5,9 +5,7 @@ class About extends React.Component {
   constructor(props) {
     super(props);    
   }
-
   render(){
-
     let highlightColor = {
       color: '#00ffae'
     }

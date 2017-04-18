@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 
-import * as Reducers from './reducers';
+import * as Reducers from './reducers/index';
 
 /* Combine Reducers */
 function combine(reducers){

@@ -1,19 +1,15 @@
-import MainComponent from './Main';
 import ContentComponent from './Content';
 import CubeComponent from './Cube';
-import ParallaxContainerComponent from './Parallax/Container';
-import ParallaxSectionComponent from './Parallax/Section';
-import ParallaxNavComponent from './Parallax/Nav';
-import DistortionContainerComponent from './Distortion/Container';
-import AboutComponent from './About';
-import BeerComponent from './Beer';
+import ParallaxComponent from './Parallax';
+import DistortionComponent from './Distortion';
+import AboutComponent from './About/about';
+import BeerComponent from './Beer/beer';
+import LoginComponent from './Login/login';
 
 export const Content = ContentComponent;
-export const Main = MainComponent;
-export const ParallaxContainer = ParallaxContainerComponent;
-export const ParallaxNav = ParallaxNavComponent;
-export const ParallaxSection = ParallaxSectionComponent;
-export const DistortionContainer = DistortionContainerComponent;
+export const Parallax = ParallaxComponent;
+export const Distortion = DistortionComponent;
 export const Beer = BeerComponent;
 export const About = AboutComponent;
 export const Cube = CubeComponent;
+export const Login = LoginComponent;

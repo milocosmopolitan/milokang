@@ -1,0 +1,66 @@
+body {
+	height: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;	
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Patua One', cursive;
+}
+
+@import './../../assets/scss/media';
+
+#app {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;  
+  color: rgb(255, 255, 255);
+}
+
+.smart-object {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -webkit-transform-style: flat;
+  -moz-transform-style: flat;
+  -ms-transform-style: flat;
+  -o-transform-style: flat;
+}
+
+.smart-btn {
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  text-align: center;  
+  cursor: pointer;
+  z-index: 9999;
+}
+
+@import './../../components/Parallax/stylesheet.scss';
+@import './../../components/Content/stylesheet.scss';
+@import './../../components/Beer/stylesheet.scss';
+
+.link-btn {
+	color: white;
+  margin: 20px 20px 20px 0px;
+  // border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  // outline: 1px solid;
+  outline-color: rgba(255, 255, 255, .5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+} 
+
+.link-btn:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388; 
+}
